@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Website Admin | Maria Theresa Ledochowska College</title>
+  <link rel="icon" type="image/png" href="assets/images/logo-badge.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .admin-shell { width: min(1120px, calc(100% - 36px)); margin: 48px auto; }
+    .admin-panel { background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; margin: 24px 0; }
+    .admin-toolbar, .admin-list-item { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .admin-list { display: grid; gap: 10px; margin-top: 18px; }
+    .admin-list-item { border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 12px 16px; }
+    .admin-list-item p { margin: 0; }
+    .admin-actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .admin-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .admin-form-grid .form-group { margin: 0; }
+    .admin-form-grid .wide { grid-column: 1 / -1; }
+    .admin-checkbox { display: flex; align-items: center; gap: 8px; margin: 16px 0; }
+    .admin-checkbox input { width: 18px; height: 18px; }
+    .admin-feedback { min-height: 24px; margin-top: 12px; color: var(--navy-800); }
+    .admin-empty { color: var(--text-muted); padding: 18px 0; }
+    @media (max-width: 640px) {
+      .admin-form-grid { grid-template-columns: 1fr; }
+      .admin-form-grid .wide { grid-column: auto; }
+      .admin-list-item { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="admin-shell">
+    <a href="index.html" class="footer-link">← Back to website</a>
+    <header class="section-header" style="margin: 20px 0 32px; text-align: left;">
+      <span class="section-tagline">Private administration</span>
+      <h1 class="section-title">Website Admin</h1>
+      <p class="section-description" style="margin-left: 0;">Sign in with an authorized Supabase admin account to manage published news, gallery items, applications, and enquiries.</p>
+    </header>
+
+    <section id="admin-login-panel" class="admin-panel">
+      <h2 class="uneb-subhead-title">Administrator sign in</h2>
+      <form id="admin-login-form">
+        <div class="admin-form-grid">
+          <div class="form-group">
+            <label class="form-label" for="admin-email">Email</label>
+            <input class="form-control" id="admin-email" type="email" autocomplete="username" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="admin-password">Password</label>
+            <input class="form-control" id="admin-password" type="password" autocomplete="current-password" required>
+          </div>
+        </div>
+        <button class="btn btn-navy" type="submit" style="margin-top: 16px;">Sign in</button>
+        <p id="admin-login-feedback" class="admin-feedback" role="status"></p>
+      </form>
+    </section>
+
+    <div id="admin-workspace" hidden>
+      <div class="admin-toolbar">
+        <h2 class="uneb-subhead-title">Content and submissions</h2>
+        <button id="admin-sign-out" type="button" class="btn btn-outline-navy">Sign out</button>
+      </div>
+
+      <section class="admin-panel">
+        <h2 class="uneb-subhead-title">News posts</h2>
+        <form id="news-editor-form">
+          <input id="news-id" type="hidden">
+          <div class="admin-form-grid">
+            <div class="form-group"><label class="form-label" for="news-title">Title</label><input class="form-control" id="news-title" required></div>
+            <div class="form-group"><label class="form-label" for="news-category">Category</label><input class="form-control" id="news-category" required></div>
+            <div class="form-group"><label class="form-label" for="news-date">Date label</label><input class="form-control" id="news-date" required></div>
+            <div class="form-group"><label class="form-label" for="news-author">Author</label><input class="form-control" id="news-author" required></div>
+            <div class="form-group wide"><label class="form-label" for="news-summary">Summary</label><textarea class="form-control" id="news-summary" rows="2" required></textarea></div>
+            <div class="form-group wide"><label class="form-label" for="news-image">Image path or URL</label><input class="form-control" id="news-image" placeholder="assets/images/photo.jpg" required></div>
+            <div class="form-group wide"><label class="form-label" for="news-content">Full article</label><textarea class="form-control" id="news-content" rows="6" required></textarea></div>
+          </div>
+          <label class="admin-checkbox"><input id="news-published" type="checkbox"> Published on the public website</label>
+          <button class="btn btn-navy" type="submit">Save post</button>
+          <button class="btn btn-outline-navy" type="reset">Clear</button>
+          <p id="news-feedback" class="admin-feedback" role="status"></p>
+        </form>
+        <div id="news-list" class="admin-list"></div>
+      </section>
+
+      <section class="admin-panel">
+        <h2 class="uneb-subhead-title">Gallery</h2>
+        <form id="gallery-editor-form">
+          <input id="gallery-id" type="hidden">
+          <div class="admin-form-grid">
+            <div class="form-group"><label class="form-label" for="gallery-title">Title</label><input class="form-control" id="gallery-title" required></div>
+            <div class="form-group"><label class="form-label" for="gallery-category">Category</label><input class="form-control" id="gallery-category" required></div>
+            <div class="form-group"><label class="form-label" for="gallery-image">Image path or URL</label><input class="form-control" id="gallery-image" placeholder="assets/images/photo.jpg" required></div>
+            <div class="form-group"><label class="form-label" for="gallery-order">Display order</label><input class="form-control" id="gallery-order" type="number" value="0" required></div>
+            <div class="form-group wide"><label class="form-label" for="gallery-description">Description</label><textarea class="form-control" id="gallery-description" rows="3"></textarea></div>
+          </div>
+          <label class="admin-checkbox"><input id="gallery-published" type="checkbox"> Published on the public website</label>
+          <button class="btn btn-navy" type="submit">Save gallery item</button>
+          <button class="btn btn-outline-navy" type="reset">Clear</button>
+          <p id="gallery-feedback" class="admin-feedback" role="status"></p>
+        </form>
+        <div id="gallery-list" class="admin-list"></div>
+      </section>
+
+      <section class="admin-panel">
+        <h2 class="uneb-subhead-title">Admission applications</h2>
+        <div id="applications-list" class="admin-list"></div>
+      </section>
+
+      <section class="admin-panel">
+        <h2 class="uneb-subhead-title">Contact enquiries</h2>
+        <div id="inquiries-list" class="admin-list"></div>
+      </section>
+
+      <section class="admin-panel">
+        <h2 class="uneb-subhead-title">Newsletter subscribers</h2>
+        <div id="subscribers-list" class="admin-list"></div>
+      </section>
+      <p id="admin-feedback" class="admin-feedback" role="status"></p>
+    </div>
+  </main>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

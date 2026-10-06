@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="35%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#AA7C11"/>
+      <stop offset="100%" stop-color="#E5C158"/>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#122744"/>
+      <stop offset="50%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#060F1E"/>
+    </linearGradient>
+    <linearGradient id="shieldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A5F"/>
+      <stop offset="100%" stop-color="#0E233D"/>
+    </linearGradient>
+    <filter id="goldDrop" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <path id="textArcTop" d="M 75 250 A 175 175 0 1 1 425 250" fill="none"/>
+  </defs>
+
+  <!-- Outer Ring with Decorative Borders -->
+  <circle cx="250" cy="250" r="236" fill="#0A192F" stroke="url(#goldGrad)" stroke-width="7" filter="url(#goldDrop)"/>
+  <circle cx="250" cy="250" r="222" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="6,4"/>
+  <circle cx="250" cy="250" r="162" fill="url(#navyGrad)" stroke="url(#goldGrad)" stroke-width="4"/>
+
+  <!-- Circular Institutional Text -->
+  <text font-family="'Plus Jakarta Sans', 'Cinzel', 'Georgia', serif" font-weight="800" font-size="19" fill="url(#goldGrad)" letter-spacing="2.6">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      MARIA THERESA LEDOCHOWSKA COLLEGE
+    </textPath>
+  </text>
+
+  <!-- Stars on Ring -->
+  <g fill="url(#goldGrad)">
+    <polygon points="65,248 68,256 77,256 70,261 73,269 65,264 57,269 60,261 53,256 62,256" />
+    <polygon points="435,248 438,256 447,256 440,261 443,269 435,264 427,269 430,261 423,256 432,256" />
+  </g>
+
+  <!-- Location Text Bottom with UNEB Center Number -->
+  <text x="250" y="420" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#FFFFFF" text-anchor="middle" letter-spacing="3.5">
+    LUGAZI • UNEB CENTER U2779
+  </text>
+
+  <!-- Inner Academic Shield -->
+  <path d="M 180 150 L 320 150 C 320 230 310 280 250 320 C 190 280 180 230 180 150 Z" 
+        fill="url(#shieldAccent)" stroke="url(#goldGrad)" stroke-width="5" />
+  
+  <!-- Shield Inner Divide -->
+  <path d="M 250 152 L 250 316" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Emblems inside Shield -->
+  <!-- Left: Open Book of Knowledge -->
+  <g transform="translate(192, 185) scale(0.65)">
+    <path d="M 45 40 C 25 35 5 40 0 45 L 0 10 C 10 5 30 0 45 8 C 60 0 80 5 90 10 L 90 45 C 85 40 65 35 45 40 Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M 45 10 L 45 40" stroke="#0A192F" stroke-width="2"/>
+    <line x1="8" y1="18" x2="38" y2="21" stroke="#0A192F" stroke-width="1.8"/>
+    <line x1="8" y1="26" x2="38" y2="29" stroke="#0A192F" stroke-width="1.8"/>
+    <line x1="8" y1="34" x2="38" y2="37" stroke="#0A192F" stroke-width="1.8"/>
+    <line x1="52" y1="21" x2="82" y2="18" stroke="#0A192F" stroke-width="1.8"/>
+    <line x1="52" y1="29" x2="82" y2="26" stroke="#0A192F" stroke-width="1.8"/>
+    <line x1="52" y1="37" x2="82" y2="34" stroke="#0A192F" stroke-width="1.8"/>
+  </g>
+
+  <!-- Right: Torch of Leadership & Truth -->
+  <g transform="translate(268, 175) scale(0.7)">
+    <path d="M 25 5 C 28 15 38 20 28 35 C 20 25 15 20 18 10 C 20 15 22 18 25 5 Z" fill="#FF5722"/>
+    <path d="M 24 12 C 26 18 31 22 26 30 C 22 24 19 20 21 15 C 22 17 23 19 24 12 Z" fill="#FFC107"/>
+    <path d="M 12 32 L 38 32 L 32 45 L 18 45 Z" fill="url(#goldGrad)" stroke="#6F4E02" stroke-width="1"/>
+    <path d="M 22 45 L 28 45 L 27 80 L 23 80 Z" fill="url(#goldGrad)" stroke="#6F4E02" stroke-width="1"/>
+    <rect x="20" y="78" width="10" height="4" rx="2" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- Center Laurel Wreath / Ribbon Anchor -->
+  <g transform="translate(250, 290) scale(0.9)">
+    <circle cx="0" cy="0" r="14" fill="url(#goldGrad)" filter="url(#goldDrop)"/>
+    <circle cx="0" cy="0" r="10" fill="#0A192F"/>
+    <polygon points="0,-7 2,-2 7,-2 3,1 5,6 0,3 -5,6 -3,1 -7,-2 -2,-2" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- Motto Banner at the Bottom of Shield -->
+  <g transform="translate(250, 360)">
+    <path d="M -195 12 L -165 -6 L -165 24 L -195 42 Z" fill="#4B3702"/>
+    <path d="M 195 12 L 165 -6 L 165 24 L 195 42 Z" fill="#4B3702"/>
+
+    <path d="M -175 -8 L -130 -8 L -145 20 L -190 20 Z" fill="#AA7C11"/>
+    <path d="M 175 -8 L 130 -8 L 145 20 L 190 20 Z" fill="#AA7C11"/>
+
+    <path d="M -150 -14 L 150 -14 C 160 -14 165 -6 160 8 L 150 24 C 145 32 135 32 125 32 L -125 32 C -135 32 -145 32 -150 24 L -160 8 C -165 -6 -160 -14 -150 -14 Z" 
+          fill="url(#goldGrad)" stroke="#5B4105" stroke-width="2" filter="url(#goldDrop)"/>
+    
+    <path d="M -142 -8 L 142 -8 C 148 -8 152 -4 148 4 L 140 18 C 136 24 130 24 120 24 L -120 24 C -130 24 -136 24 -140 18 L -148 4 C -152 -4 -148 -8 -142 -8 Z" 
+          fill="none" stroke="#6F4E02" stroke-width="1.2" opacity="0.6"/>
+
+    <text x="0" y="14" font-family="'Cinzel', 'Georgia', serif" font-weight="900" font-size="14" fill="#0A192F" text-anchor="middle" letter-spacing="1.5">
+      LEARNING TODAY... LEADING TOMORROW
+    </text>
+  </g>
+</svg>
