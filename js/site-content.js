@@ -125,7 +125,7 @@ window.siteContent = {
       name: "Natural Sciences & Mathematics",
       category: "Sciences",
       icon: "microscope",
-      image: "assets/images/science lab.png",
+      image: "assets/images/math.png",
       tagline: "Pioneering scientific inquiry, discovery, and healthcare pre-requisites.",
       description: "Comprehensive instruction in Physics, Chemistry, Biology, and Pure & Applied Mathematics backed by well-equipped laboratories. Prepares students for careers in Medicine, Engineering, Pharmacy, and Biotechnology under UNEB Center No. U2779.",
       subjects: ["Physics", "Chemistry", "Biology", "Pure Mathematics", "Applied Mathematics", "Agriculture"],
@@ -137,7 +137,7 @@ window.siteContent = {
       name: "ICT & Computer Studies",
       category: "Technology",
       icon: "laptop",
-      image: "assets/images/Focused Students in a Bright Computer Lab.png",
+      image: "assets/images/ict lab.jpeg",
       tagline: "Digital literacy, software development, and modern computer laboratory training.",
       description: "Equipping every student with high-level computer literacy, coding fundamentals, typing, and digital research skills in modern high-speed networked computer laboratories as featured in our campus prospectus.",
       subjects: ["Sub-ICT (A-Level)", "Computer Studies (O-Level)", "Digital Design & Research"],
@@ -173,7 +173,7 @@ window.siteContent = {
       name: "Humanities & Social Sciences",
       category: "Humanities",
       icon: "globe",
-      image: "assets/images/DSC_1167.JPG",
+      image: "assets/images/geograpy.jpg",
       tagline: "Critical inquiry into history, law, governance, and human society.",
       description: "Rigorous analytical training in History, Geography, Christian Religious Education (CRE), and Islamic Religious Education. Fosters deep analytical reasoning, public policy comprehension, and ethical leadership.",
       subjects: ["History (African & European)", "Geography", "Divinity (CRE)", "Islamic Religious Studies", "Economics"],
@@ -185,7 +185,7 @@ window.siteContent = {
       name: "Business Studies & Economics",
       category: "Business",
       icon: "briefcase",
-      image: "assets/images/sports.jpg",
+      image: "assets/images/economics.jpg",
       tagline: "Empowering young entrepreneurs, financial analysts, and corporate leaders.",
       description: "Practical and theoretical training in Commerce, Entrepreneurship Education, Principles of Accounts, and Economics. Students manage real student-led micro-enterprises and participate in national business challenges.",
       subjects: ["Economics", "Entrepreneurship", "Principles of Accounts", "Commerce"],
@@ -200,20 +200,18 @@ window.siteContent = {
       id: "dept-sciences",
       name: "Department of Natural Sciences",
       icon: "flask",
-      image: "assets/images/science lab.png",
+      image: "assets/images/sciences.jpg",
       headTitle: "Faculty of Natural Sciences",
-      facultyCount: 14,
       subjects: ["Physics", "Chemistry", "Biology", "Agriculture"],
       description: "Fostering empirical scientific investigation, diagnostic problem-solving, and pre-medical academic mastery.",
-      labCount: "3 Fully-Equipped Laboratories"
+      labCount: "Fully-Equipped Laboratories"
     },
     {
       id: "dept-math",
       name: "Department of Mathematics",
       icon: "calculator",
-      image: "assets/images/DSC_1161.JPG",
+      image: "assets/images/math.png",
       headTitle: "Faculty of Mathematics",
-      facultyCount: 9,
       subjects: ["Pure Mathematics", "Applied Mathematics", "Subsidiary Mathematics"],
       description: "Nurturing quantitative reasoning, algebraic logic, mathematical modeling, and calculus fluency.",
       labCount: "Math Clinic & Problem-Solving Studio"
@@ -222,9 +220,8 @@ window.siteContent = {
       id: "dept-languages",
       name: "Department of Languages & Literature",
       icon: "book-open",
-      image: "assets/images/Bright School Library Reading Corner.png",
+      image: "assets/images/reading room.jpeg",
       headTitle: "Faculty of Languages & Literature",
-      facultyCount: 11,
       subjects: ["English Language", "Literature in English", "Luganda", "Kiswahili", "French"],
       description: "Developing articulate writers, eloquent debaters, critical literary analysts, and multi-lingual scholars.",
       labCount: "Language Reading Lab & Modern Library"
@@ -233,9 +230,8 @@ window.siteContent = {
       id: "dept-humanities",
       name: "Department of Humanities & Social Sciences",
       icon: "landmark",
-      image: "assets/images/DSC_1167.JPG",
+      image: "assets/images/geograpy.jpg",
       headTitle: "Faculty of Humanities & Social Sciences",
-      facultyCount: 8,
       subjects: ["History", "Geography", "Divinity (CRE)", "Islamic Religious Studies"],
       description: "Cultivating civic leadership, geopolitical awareness, historical analysis, and Christian ethics.",
       labCount: "Geography Map Room & Archive"
@@ -244,9 +240,8 @@ window.siteContent = {
       id: "dept-business",
       name: "Department of Business & Commercial Studies",
       icon: "trending-up",
-      image: "assets/images/DSC_1167.JPG",
+      image: "assets/images/commercial studies.jpg",
       headTitle: "Faculty of Business Studies",
-      facultyCount: 7,
       subjects: ["Economics", "Commerce", "Entrepreneurship", "Accounting"],
       description: "Inspiring financial literacy, business strategy, enterprise management, and national business challenge participation.",
       labCount: "Student Enterprise Incubator"
@@ -255,12 +250,11 @@ window.siteContent = {
       id: "dept-ict",
       name: "Department of ICT & Innovation",
       icon: "code",
-      image: "assets/images/Focused Students in a Bright Computer Lab.png",
+      image: "assets/images/ict and innovation.jpg",
       headTitle: "Faculty of ICT & Digital Innovation",
-      facultyCount: 6,
       subjects: ["Computer Studies", "Subsidiary ICT", "Web Design", "Robotics"],
       description: "Empowering every learner with computational literacy, algorithmic thinking, cloud systems, and responsible digital citizenship.",
-      labCount: "2 High-Capacity Computer Suites"
+      labCount: "Fully-Equipped Computer Lab"
     },
     {
       id: "dept-vocational",
@@ -268,7 +262,6 @@ window.siteContent = {
       icon: "wrench",
       image: "assets/images/Bright African Sewing Class Workshop.png",
       headTitle: "Faculty of Vocational & Technical Studies",
-      facultyCount: 5,
       subjects: ["Tailoring & Design", "Technical Drawing", "Agriculture", "Fine Art"],
       description: "Providing hands-on vocational skills, tailoring workshop practicals, architectural drafting, and agricultural management.",
       labCount: "Tailoring Workshop & Demonstration Farm"
@@ -279,7 +272,6 @@ window.siteContent = {
       icon: "medal",
       image: "assets/images/sports.jpg",
       headTitle: "Physical Education & Athletics Directorate",
-      facultyCount: 4,
       subjects: ["Football", "Netball", "Athletics", "Volleyball", "Fitness"],
       description: "Developing sportsmanship, physical vigor, team cohesion, and competing at regional and national school sporting tournaments.",
       labCount: "Multi-purpose Sports Complex"
@@ -693,35 +685,6 @@ The newly inducted student council pledged to uphold the college motto, 'Learnin
       { label: "Science Practicals Distinction", value: "100%", desc: "Physics, Chemistry & Biology laboratory pass rate", icon: "flask" },
       { label: "Division 1 & Direct Passes", value: "185+", desc: "Across UACE & UCE candidate classes", icon: "award" },
       { label: "Govt Merit Scholarships", value: "24+", desc: "National university merit awards", icon: "graduation-cap" }
-    ],
-    topScholarsHighlight: [
-      {
-        name: "Kato Emmanuel Musoke",
-        level: "UACE 2024 (A-Level)",
-        combination: "BCM/ICT (Biology, Chemistry, Mathematics)",
-        score: "20 Points (Maximum)",
-        destination: "Bachelor of Medicine & Surgery (MBChB) – Makerere University",
-        image: "assets/images/science lab.png",
-        quote: "The intensive laboratory practicals and devoted teachers at MTLC gave me the academic foundation to achieve maximum points."
-      },
-      {
-        name: "Nakato Grace Patricia",
-        level: "UACE 2024 (A-Level)",
-        combination: "PEM/ICT (Physics, Economics, Mathematics)",
-        score: "19 Points",
-        destination: "BSc. Civil Engineering – Makerere University",
-        image: "assets/images/Focused Students in a Bright Computer Lab.png",
-        quote: "Christian discipline, evening supervised study clinics, and high-speed ICT research made all the difference in my scores."
-      },
-      {
-        name: "Ochen David Brian",
-        level: "UCE 2024 (O-Level)",
-        combination: "Sciences, Languages & Humanities",
-        score: "Aggregate 8 in 8 (Division 1)",
-        destination: "Promoted to S.5 Sciences (PCM/ICT) at MTLC Lugazi",
-        image: "assets/images/Bright School Library Reading Corner.png",
-        quote: "MTLC provides the ideal serene environment to excel spiritually and academically under Center U2779."
-      }
     ],
     uace2024: {
       title: "U.A.C.E 2024 Official Results",

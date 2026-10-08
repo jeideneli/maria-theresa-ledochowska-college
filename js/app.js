@@ -373,7 +373,7 @@ function renderDepartments() {
         <h4 class="dept-name">${dept.name}</h4>
         <p class="dept-desc">${dept.description}</p>
         <div class="dept-meta">
-          <span class="dept-faculty-count">${dept.headTitle} • ${dept.facultyCount} Educators</span>
+          <span class="dept-faculty-count">${dept.headTitle}</span>
         </div>
         <div class="dept-facility-highlight">
           <i data-lucide="check-circle" style="width: 15px; height: 15px; color: var(--gold-500); flex-shrink: 0;"></i>
@@ -1205,7 +1205,6 @@ function renderUnebResults() {
   const uce = results.uce2024;
   const centerNo = results.centerNumber || "UNEB CENTER NO. U2779";
   const metrics = results.summaryMetrics || [];
-  const topScholars = results.topScholarsHighlight || [];
 
   container.innerHTML = `
     <div class="uneb-results-wrapper">
@@ -1240,41 +1239,6 @@ function renderUnebResults() {
             </div>
           </div>
         `).join('')}
-      </div>
-
-      <!-- Top Scholars Spotlight Carousel / Showcase -->
-      <div class="uneb-scholars-section">
-        <div class="uneb-section-subhead">
-          <span class="uneb-subhead-pill">Hall of Distinction</span>
-          <h4 class="uneb-subhead-title">2024 Examination Star Performers</h4>
-          <p class="uneb-subhead-desc">Celebrating outstanding scholars who demonstrated exemplary academic discipline and leadership.</p>
-        </div>
-
-        <div class="uneb-scholars-grid">
-          ${topScholars.map((s, idx) => `
-            <div class="scholar-card reveal delay-${idx + 1}">
-              <div class="scholar-card-media">
-                <img src="${s.image}" alt="${s.name} - MTLC Top Scholar" class="scholar-img" loading="lazy">
-                <div class="scholar-media-overlay"></div>
-                <div class="scholar-rank-badge ${idx === 0 ? 'gold-rank' : idx === 1 ? 'silver-rank' : 'bronze-rank'}">
-                  <i data-lucide="trophy" style="width: 14px; height: 14px;"></i>
-                  <span>#${idx + 1} Distinction</span>
-                </div>
-                <div class="scholar-score-pill">${s.score}</div>
-              </div>
-              <div class="scholar-card-body">
-                <span class="scholar-level-badge">${s.level}</span>
-                <h5 class="scholar-name">${s.name}</h5>
-                <div class="scholar-comb">${s.combination}</div>
-                <div class="scholar-dest">
-                  <i data-lucide="graduation-cap" style="width: 14px; height: 14px; color: var(--gold-500); flex-shrink: 0;"></i>
-                  <span>${s.destination}</span>
-                </div>
-                <p class="scholar-quote">“${s.quote}”</p>
-              </div>
-            </div>
-          `).join('')}
-        </div>
       </div>
 
       <!-- Interactive Table Controls (Filter Tabs & Live Search) -->
