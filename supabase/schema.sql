@@ -232,7 +232,6 @@ values
   ('Inter-House Athletics & Sports Championships', 'Sports', 'Vibrant athletics and sports activities during inter-house championships in Lugazi.', 'assets/images/sports.jpg', 8, true),
   ('Student Community Assembly & Fellowship', 'Students', 'Scholars gathered on campus for school assembly, values formation, and leadership mentoring.', 'assets/images/DSC_1170.JPG', 9, true),
   ('Cultural Gala, MDD & School Celebrations', 'Events', 'Students celebrating cultural heritage and faith through music, dance, and drama.', 'assets/images/music dance and drama.jpg', 10, true),
-  ('Official College Prospectus & Admissions Brochure', 'Campus', 'Official Maria Theresa Ledochowska College prospectus and UNEB Center U2779 admissions guide.', 'assets/images/flyer.jpg', 11, true),
   ('MTLC Computer Laboratory', 'Academics', 'Computer workstations in the college ICT learning space.', 'assets/images/computer-lab.jpeg', 12, true),
   ('Covered Campus Passage', 'Campus', 'A sheltered walkway connecting the college campus buildings.', 'assets/images/passway.jpeg', 13, true),
   ('Sick Bay and Skilling Room', 'Campus', 'The college building housing student wellbeing and practical-skills spaces.', 'assets/images/sick-bay-and-skilling-room.jpeg', 14, true),

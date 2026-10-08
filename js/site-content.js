@@ -544,13 +544,6 @@ The newly inducted student council pledged to uphold the college motto, 'Learnin
       image: "assets/images/music dance and drama.jpg"
     },
     {
-      id: "gal-flyer",
-      title: "Official College Prospectus & Admissions Brochure",
-      category: "Campus",
-      description: "Official Maria Theresa Ledochowska College prospectus and UNEB Center U2779 admissions guide.",
-      image: "assets/images/flyer.jpg"
-    },
-    {
       id: "gal-computer-room",
       title: "MTLC Computer Laboratory",
       category: "Academics",

@@ -594,8 +594,12 @@ function renderGallery() {
     container.dataset.supabaseLoaded = 'true';
     window.mtlcSupabase.select('gallery_items', { order: 'sort_order.asc', limit: 500 })
       .then(galleryItems => {
-        if (!galleryItems.length) return;
-        container.innerHTML = galleryItems.map((item, index) => `
+        const visibleGalleryItems = galleryItems.filter(item =>
+          !/prospectus|brochure/i.test(item.title || '') &&
+          !/(?:^|\/)flyer\.jpg(?:[?#]|$)/i.test(item.image_url || '')
+        );
+        if (!visibleGalleryItems.length) return;
+        container.innerHTML = visibleGalleryItems.map((item, index) => `
           <div class="gallery-item revealed" data-category="${escapeHtml(item.category)}" data-index="${index}" data-src="${escapeHtml(item.image_url)}" data-title="${escapeHtml(item.title)}" data-desc="${escapeHtml(item.description)}">
             <img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)}" class="gallery-img" loading="lazy">
             <div class="gallery-overlay">
@@ -605,7 +609,7 @@ function renderGallery() {
           </div>
         `).join('');
         const allPhotosTab = tabs.find(tab => tab.getAttribute('data-category') === 'All');
-        if (allPhotosTab) allPhotosTab.textContent = `All Photos (${galleryItems.length})`;
+        if (allPhotosTab) allPhotosTab.textContent = `All Photos (${visibleGalleryItems.length})`;
         items = Array.from(container.querySelectorAll('.gallery-item'));
         attachLightboxTriggers();
       })
