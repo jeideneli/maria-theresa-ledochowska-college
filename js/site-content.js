@@ -161,7 +161,7 @@ window.siteContent = {
       name: "Technical & Vocational Studies",
       category: "Vocational",
       icon: "tool",
-      image: "assets/images/Bright African Sewing Class Workshop.png",
+      image: "assets/images/students-sewing.jpg",
       tagline: "Hands-on engineering concepts, technical drawing, tailoring, and life skills.",
       description: "Instilling practical craftsmanship through Tailoring & Fashion Design, Technical Drawing, Woodwork concepts, Agriculture, and Fine Art, preparing learners for vocational autonomy and self-reliance.",
       subjects: ["Tailoring & Design", "Technical Drawing", "Fine Art", "Agriculture (Practical & Theory)"],
@@ -260,7 +260,7 @@ window.siteContent = {
       id: "dept-vocational",
       name: "Department of Vocational & Technical Studies",
       icon: "wrench",
-      image: "assets/images/Bright African Sewing Class Workshop.png",
+      image: "assets/images/students-sewing.jpg",
       headTitle: "Faculty of Vocational & Technical Studies",
       subjects: ["Tailoring & Design", "Technical Drawing", "Agriculture", "Fine Art"],
       description: "Providing hands-on vocational skills, tailoring workshop practicals, architectural drafting, and agricultural management.",
@@ -466,13 +466,6 @@ The newly inducted student council pledged to uphold the college motto, 'Learnin
   // 10. PHOTO GALLERY (All Official Campus Photographs)
   gallery: [
     {
-      id: "gal-sci-lab",
-      title: "Science Laboratory & Practical Chemistry",
-      category: "Academics",
-      description: "Students conducting chemistry and biology practical investigations in the modern science laboratory.",
-      image: "assets/images/science lab.png"
-    },
-    {
       id: "gal-group",
       title: "College Student Body & Uniform Assembly",
       category: "Students",
@@ -485,20 +478,6 @@ The newly inducted student council pledged to uphold the college motto, 'Learnin
       category: "Academics",
       description: "Students engaged in computer studies, typing, and digital research in the modern ICT laboratory suite.",
       image: "assets/images/Focused Students in a Bright Computer Lab.png"
-    },
-    {
-      id: "gal-lib",
-      title: "Central College Library & Reading Corner",
-      category: "Academics",
-      description: "Focused study and reference work in the collegiate library surrounded by extensive book collections.",
-      image: "assets/images/Bright School Library Reading Corner.png"
-    },
-    {
-      id: "gal-sew",
-      title: "Vocational Tailoring & Skilling Workshop",
-      category: "Campus",
-      description: "Hands-on vocational skilling and garment construction in our well-equipped tailoring training suite.",
-      image: "assets/images/Bright African Sewing Class Workshop.png"
     },
     {
       id: "gal-sci-dsc",
@@ -541,13 +520,6 @@ The newly inducted student council pledged to uphold the college motto, 'Learnin
       category: "Academics",
       description: "Computer workstations in the college ICT learning space.",
       image: "assets/images/computer-lab.jpeg"
-    },
-    {
-      id: "gal-campus-passage",
-      title: "Covered Campus Passage",
-      category: "Campus",
-      description: "A sheltered walkway connecting the college's campus buildings.",
-      image: "assets/images/passway.jpeg"
     },
     {
       id: "gal-support-rooms",

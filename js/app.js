@@ -596,6 +596,7 @@ function renderGallery() {
       .then(galleryItems => {
         const visibleGalleryItems = galleryItems.filter(item =>
           !/prospectus|brochure/i.test(item.title || '') &&
+          !/^(?:covered campus passage|vocational tailoring\s*&\s*skilling workshop|science laboratory\s*&\s*practical chemistry|central college library\s*&\s*reading corner)$/i.test((item.title || '').trim()) &&
           !/(?:^|\/)flyer\.jpg(?:[?#]|$)/i.test(item.image_url || '')
         );
         if (!visibleGalleryItems.length) return;
