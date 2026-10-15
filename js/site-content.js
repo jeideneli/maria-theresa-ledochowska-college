@@ -122,7 +122,7 @@ window.siteContent = {
   academicPrograms: [
     {
       id: "sciences",
-      name: "Natural Sciences & Mathematics",
+      name: "Chemistry & Mathematics",
       category: "Sciences",
       icon: "microscope",
       image: "assets/images/math.png",
@@ -170,7 +170,7 @@ window.siteContent = {
     },
     {
       id: "humanities",
-      name: "Humanities & Social Sciences",
+      name: "History",
       category: "Humanities",
       icon: "globe",
       image: "assets/images/geograpy.jpg",
@@ -198,10 +198,10 @@ window.siteContent = {
   departments: [
     {
       id: "dept-sciences",
-      name: "Department of Natural Sciences",
+      name: "Department of Chemistry",
       icon: "flask",
       image: "assets/images/sciences.jpg",
-      headTitle: "Faculty of Natural Sciences",
+      headTitle: "Faculty of Chemistry",
       subjects: ["Physics", "Chemistry", "Biology", "Agriculture"],
       description: "Fostering empirical scientific investigation, diagnostic problem-solving, and pre-medical academic mastery.",
       labCount: "Fully-Equipped Laboratories"
@@ -228,30 +228,30 @@ window.siteContent = {
     },
     {
       id: "dept-humanities",
-      name: "Department of Humanities & Social Sciences",
+      name: "Department of History",
       icon: "landmark",
       image: "assets/images/geograpy.jpg",
-      headTitle: "Faculty of Humanities & Social Sciences",
+      headTitle: "Faculty of History",
       subjects: ["History", "Geography", "Divinity (CRE)", "Islamic Religious Studies"],
       description: "Cultivating civic leadership, geopolitical awareness, historical analysis, and Christian ethics.",
       labCount: "Geography Map Room & Archive"
     },
     {
       id: "dept-business",
-      name: "Department of Business & Commercial Studies",
+      name: "Department of Economics",
       icon: "trending-up",
       image: "assets/images/commercial studies.jpg",
-      headTitle: "Faculty of Business Studies",
+      headTitle: "Faculty of Economics",
       subjects: ["Economics", "Commerce", "Entrepreneurship", "Accounting"],
       description: "Inspiring financial literacy, business strategy, enterprise management, and national business challenge participation.",
       labCount: "Student Enterprise Incubator"
     },
     {
       id: "dept-ict",
-      name: "Department of ICT & Innovation",
+      name: "Department of Computer Studies",
       icon: "code",
       image: "assets/images/ict and innovation.jpg",
-      headTitle: "Faculty of ICT & Digital Innovation",
+      headTitle: "Faculty of Computer Studies",
       subjects: ["Computer Studies", "Subsidiary ICT", "Web Design", "Robotics"],
       description: "Empowering every learner with computational literacy, algorithmic thinking, cloud systems, and responsible digital citizenship.",
       labCount: "Fully-Equipped Computer Lab"
