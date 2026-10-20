@@ -121,160 +121,96 @@ window.siteContent = {
   // 5. ACADEMIC PROGRAMS
   academicPrograms: [
     {
-      id: "sciences",
-      name: "Chemistry & Mathematics",
-      category: "Sciences",
-      icon: "microscope",
-      image: "assets/images/math.png",
-      tagline: "Pioneering scientific inquiry, discovery, and healthcare pre-requisites.",
-      description: "Comprehensive instruction in Physics, Chemistry, Biology, and Pure & Applied Mathematics backed by well-equipped laboratories. Prepares students for careers in Medicine, Engineering, Pharmacy, and Biotechnology under UNEB Center No. U2779.",
-      subjects: ["Physics", "Chemistry", "Biology", "Pure Mathematics", "Applied Mathematics", "Agriculture"],
-      levels: ["O-Level (UCE)", "A-Level (UACE - BCM, PEM, PCB, MEG)"],
-      facilities: "Modern Chemistry, Physics & Biology Laboratories with specialized apparatus and Vernier measurement kits."
-    },
-    {
-      id: "ict",
-      name: "ICT & Computer Studies",
-      category: "Technology",
-      icon: "laptop",
-      image: "assets/images/ict lab.jpeg",
-      tagline: "Digital literacy, software development, and modern computer laboratory training.",
-      description: "Equipping every student with high-level computer literacy, coding fundamentals, typing, and digital research skills in modern high-speed networked computer laboratories as featured in our campus prospectus.",
-      subjects: ["Sub-ICT (A-Level)", "Computer Studies (O-Level)", "Digital Design & Research"],
-      levels: ["O-Level (UCE)", "A-Level (Subsidiary ICT)", "Co-Curricular Certifications"],
-      facilities: "High-capacity computer suites with desktop monitors, internet connectivity, and digital teaching aids."
-    },
-    {
-      id: "languages",
-      name: "Languages & Literature",
-      category: "Languages",
-      icon: "message-square",
-      image: "assets/images/Bright School Library Reading Corner.png",
-      tagline: "Mastery of written expression, oratory eloquence, and global tongues.",
-      description: "Developing articulate communicators through intensive English Language mastery, Literature in English, Kiswahili, French, and Luganda. Drives students to excel in national debates and essay competitions.",
-      subjects: ["English Language", "Literature in English", "Kiswahili", "French", "Luganda"],
-      levels: ["O-Level (UCE)", "A-Level (UACE - Literature in English, Luganda, French)"],
-      facilities: "Well-stocked Modern College Library with rich reference sections and reading halls."
-    },
-    {
-      id: "technical",
-      name: "Technical & Vocational Studies",
-      category: "Vocational",
-      icon: "tool",
+      id: "vocational",
+      name: "Vocational Studies",
+      category: "Vocational Studies",
+      icon: "wrench",
       image: "assets/images/students-sewing.jpg",
-      tagline: "Hands-on engineering concepts, technical drawing, tailoring, and life skills.",
-      description: "Instilling practical craftsmanship through Tailoring & Fashion Design, Technical Drawing, Woodwork concepts, Agriculture, and Fine Art, preparing learners for vocational autonomy and self-reliance.",
-      subjects: ["Tailoring & Design", "Technical Drawing", "Fine Art", "Agriculture (Practical & Theory)"],
-      levels: ["O-Level (UCE)", "A-Level (Technical Art & Agriculture)", "Vocational Certifications"],
-      facilities: "Sewing and tailoring workshop, technical drawing design studio, and demonstration farm."
+      tagline: "Practical skills for self-employment, entrepreneurship, and future careers.",
+      description: "Learners develop practical skills in shoemaking and tailoring. Computers support digital learning, computer skills, and practical training, helping learners prepare for self-employment, entrepreneurship, and future employment.",
+      subjects: ["Shoemaking", "Tailoring", "Computer Skills", "Digital Learning"],
+      levels: ["O-Level (UCE)", "Practical Skills Training"],
+      facilities: "Computers to support digital learning and practical training."
+    },
+    {
+      id: "language",
+      name: "Language",
+      category: "Language",
+      icon: "message-square",
+      image: "assets/images/library.jpeg",
+      tagline: "Building confident communication in speech and writing.",
+      description: "Learners develop essential written and spoken communication skills. A well-stocked library with textbooks, dictionaries, novels, reference materials, and other reading resources supports vocabulary, reading culture, comprehension, and communication.",
+      subjects: ["Written Communication", "Spoken Communication", "Reading", "Comprehension"],
+      levels: ["O-Level (UCE)", "A-Level (UACE)"],
+      facilities: "A well-stocked library with textbooks, dictionaries, novels, and reference materials."
+    },
+    {
+      id: "sciences",
+      name: "Sciences",
+      category: "Sciences",
+      icon: "flask",
+      image: "assets/images/sciences 1.jpg",
+      tagline: "Scientific knowledge and practical investigation through experiments.",
+      description: "Biology, Chemistry, and Physics lessons combine scientific knowledge with practical activities. Learners use laboratory equipment, apparatus, and materials to conduct experiments and develop scientific inquiry, critical thinking, and problem-solving skills.",
+      subjects: ["Biology", "Chemistry", "Physics", "Scientific Inquiry"],
+      levels: ["O-Level (UCE)", "A-Level (UACE)"],
+      facilities: "A well-stocked laboratory with equipment, apparatus, and materials for experiments."
     },
     {
       id: "humanities",
-      name: "History",
+      name: "Humanities",
       category: "Humanities",
       icon: "globe",
       image: "assets/images/geograpy.jpg",
-      tagline: "Critical inquiry into history, law, governance, and human society.",
-      description: "Rigorous analytical training in History, Geography, Christian Religious Education (CRE), and Islamic Religious Education. Fosters deep analytical reasoning, public policy comprehension, and ethical leadership.",
-      subjects: ["History (African & European)", "Geography", "Divinity (CRE)", "Islamic Religious Studies", "Economics"],
-      levels: ["O-Level (UCE)", "A-Level (UACE - HEL, DEG, HED)"],
-      facilities: "Dedicated Humanities resource center, historical archives, and MUN debate hall."
-    },
-    {
-      id: "business",
-      name: "Business Studies & Economics",
-      category: "Business",
-      icon: "briefcase",
-      image: "assets/images/economics.jpg",
-      tagline: "Empowering young entrepreneurs, financial analysts, and corporate leaders.",
-      description: "Practical and theoretical training in Commerce, Entrepreneurship Education, Principles of Accounts, and Economics. Students manage real student-led micro-enterprises and participate in national business challenges.",
-      subjects: ["Economics", "Entrepreneurship", "Principles of Accounts", "Commerce"],
-      levels: ["O-Level (UCE)", "A-Level (UACE - MEA, HEA, DEG)"],
-      facilities: "Young Entrepreneurs Incubation Hub & Junior Achievement student enterprise lab."
+      tagline: "Understanding society, culture, history, and the environment.",
+      description: "History, Geography, Religious Education, and related social sciences help learners understand human society and relationships. Learners build critical thinking, analytical, decision-making, and problem-solving skills, while developing good citizenship, respect for cultures, moral values, and awareness of social and economic issues.",
+      subjects: ["History", "Geography", "Religious Education", "Social Sciences"],
+      levels: ["O-Level (UCE)", "A-Level (UACE)"],
+      facilities: "Learning resources for the study of society, culture, history, and the environment."
     }
   ],
 
-  // 6. DEPARTMENTS & HEADS OF DEPARTMENT
+  // 6. DEPARTMENTS
   departments: [
     {
-      id: "dept-sciences",
-      name: "Department of Chemistry",
-      icon: "flask",
-      image: "assets/images/sciences.jpg",
-      headTitle: "Faculty of Chemistry",
-      subjects: ["Physics", "Chemistry", "Biology", "Agriculture"],
-      description: "Fostering empirical scientific investigation, diagnostic problem-solving, and pre-medical academic mastery.",
-      labCount: "Fully-Equipped Laboratories"
+      id: "dept-vocational",
+      name: "Vocational Studies",
+      icon: "wrench",
+      image: "assets/images/students-sewing.jpg",
+      headTitle: "Practical Skills",
+      subjects: ["Shoemaking", "Tailoring", "Computer Skills"],
+      description: "Learners gain practical skills in shoemaking and tailoring. Computers enhance digital learning, computer skills, and practical training, preparing learners for self-employment, entrepreneurship, and future employment.",
+      labCount: "Computers for digital learning and practical training"
     },
     {
-      id: "dept-math",
-      name: "Department of Mathematics",
-      icon: "calculator",
-      image: "assets/images/math.png",
-      headTitle: "Faculty of Mathematics",
-      subjects: ["Pure Mathematics", "Applied Mathematics", "Subsidiary Mathematics"],
-      description: "Nurturing quantitative reasoning, algebraic logic, mathematical modeling, and calculus fluency.",
-      labCount: "Math Clinic & Problem-Solving Studio"
-    },
-    {
-      id: "dept-languages",
-      name: "Department of Languages & Literature",
+      id: "dept-language",
+      name: "Language",
       icon: "book-open",
-      image: "assets/images/reading room.jpeg",
-      headTitle: "Faculty of Languages & Literature",
-      subjects: ["English Language", "Literature in English", "Luganda", "Kiswahili", "French"],
-      description: "Developing articulate writers, eloquent debaters, critical literary analysts, and multi-lingual scholars.",
-      labCount: "Language Reading Lab & Modern Library"
+      image: "assets/images/library.jpeg",
+      headTitle: "Communication Skills",
+      subjects: ["Written Communication", "Spoken Communication", "Reading", "Comprehension"],
+      description: "Learners strengthen written and spoken communication, vocabulary, reading culture, and comprehension with support from a well-stocked library of textbooks, dictionaries, novels, reference materials, and other reading resources.",
+      labCount: "Well-stocked library"
+    },
+    {
+      id: "dept-sciences",
+      name: "Sciences",
+      icon: "flask",
+      image: "assets/images/sciences 1.jpg",
+      headTitle: "Scientific Knowledge & Practical Skills",
+      subjects: ["Biology", "Chemistry", "Physics"],
+      description: "Biology, Chemistry, and Physics develop scientific knowledge and practical skills. Experiments and other laboratory activities build scientific inquiry, critical thinking, and problem-solving.",
+      labCount: "Well-stocked laboratory with equipment, apparatus, and materials"
     },
     {
       id: "dept-humanities",
-      name: "Department of History",
-      icon: "landmark",
+      name: "Humanities",
+      icon: "globe",
       image: "assets/images/geograpy.jpg",
-      headTitle: "Faculty of History",
-      subjects: ["History", "Geography", "Divinity (CRE)", "Islamic Religious Studies"],
-      description: "Cultivating civic leadership, geopolitical awareness, historical analysis, and Christian ethics.",
-      labCount: "Geography Map Room & Archive"
-    },
-    {
-      id: "dept-business",
-      name: "Department of Economics",
-      icon: "trending-up",
-      image: "assets/images/commercial studies.jpg",
-      headTitle: "Faculty of Economics",
-      subjects: ["Economics", "Commerce", "Entrepreneurship", "Accounting"],
-      description: "Inspiring financial literacy, business strategy, enterprise management, and national business challenge participation.",
-      labCount: "Student Enterprise Incubator"
-    },
-    {
-      id: "dept-ict",
-      name: "Department of Computer Studies",
-      icon: "code",
-      image: "assets/images/ict and innovation.jpg",
-      headTitle: "Faculty of Computer Studies",
-      subjects: ["Computer Studies", "Subsidiary ICT", "Web Design", "Robotics"],
-      description: "Empowering every learner with computational literacy, algorithmic thinking, cloud systems, and responsible digital citizenship.",
-      labCount: "Fully-Equipped Computer Lab"
-    },
-    {
-      id: "dept-vocational",
-      name: "Department of Vocational & Technical Studies",
-      icon: "wrench",
-      image: "assets/images/students-sewing.jpg",
-      headTitle: "Faculty of Vocational & Technical Studies",
-      subjects: ["Tailoring & Design", "Technical Drawing", "Agriculture", "Fine Art"],
-      description: "Providing hands-on vocational skills, tailoring workshop practicals, architectural drafting, and agricultural management.",
-      labCount: "Tailoring Workshop & Demonstration Farm"
-    },
-    {
-      id: "dept-sports",
-      name: "Department of Physical Education & Sports",
-      icon: "medal",
-      image: "assets/images/sports.jpg",
-      headTitle: "Physical Education & Athletics Directorate",
-      subjects: ["Football", "Netball", "Athletics", "Volleyball", "Fitness"],
-      description: "Developing sportsmanship, physical vigor, team cohesion, and competing at regional and national school sporting tournaments.",
-      labCount: "Multi-purpose Sports Complex"
+      headTitle: "Society, Culture & Citizenship",
+      subjects: ["History", "Geography", "Religious Education", "Social Sciences"],
+      description: "History, Geography, Religious Education, and related social sciences help learners understand society, culture, history, the environment, and social relationships. The department promotes analytical and decision-making skills, good citizenship, respect for cultures, moral values, and awareness of social and economic issues.",
+      labCount: "Learning for responsible citizenship and community contribution"
     }
   ],
 
@@ -361,14 +297,6 @@ window.siteContent = {
       highlights: "Regional champions in Buikwe District Secondary Schools Athletics League."
     },
     {
-      id: "culture",
-      title: "Cultural Gala & Traditional Dance Festival",
-      icon: "music",
-      image: "assets/images/music dance and drama.jpg",
-      description: "Vibrant students moving and performing energetic Ugandan folk dances, choreography, choral music, and stage drama.",
-      highlights: "Annual Cultural Gala with folk dance competitions and colorful regional attire."
-    },
-    {
       id: "assembly",
       title: "Student Community Assembly & Campus Movement",
       icon: "compass",
@@ -385,18 +313,10 @@ window.siteContent = {
       highlights: "Annual leadership summits, ceremonial parade processions, and student councils."
     },
     {
-      id: "track-events",
-      title: "Athletics Relays & Field Sprint Heats",
-      icon: "zap",
-      image: "assets/images/sports.jpg",
-      description: "High-tempo athletics heats, sprints, and relays on our sports grounds, cultivating physical endurance and teamwork.",
-      highlights: "Inter-house athletics trophies, sprint relays, and fitness conditioning."
-    },
-    {
       id: "drama-mdd",
       title: "Music, Dance & Drama (MDD) Performances",
       icon: "sparkles",
-      image: "assets/images/music dance and drama.jpg",
+      image: "assets/images/school actvities mdd.jpeg",
       description: "Dynamic theatrical motion, instrumental ensembles, dance routines, and expressive stage acting in the college auditorium.",
       highlights: "Annual MDD festival, inter-class drama awards, and youth music recitals."
     }
@@ -422,20 +342,6 @@ For details, contact:
 • Office Landline: 0392 946071
 • Mobile / WhatsApp: +256 (0) 772 450 925
 • Official Email: mariatheresalego@gmail.com`
-    },
-    {
-      id: "news-sports",
-      category: "Sports",
-      date: "Recent Event",
-      title: "Annual Inter-House Sports & Track Championships Draw Record Crowds",
-      summary: "MTLC athletes moving at full speed across track and field events in fierce inter-house athletic competition.",
-      image: "assets/images/sports.jpg",
-      author: "Sports Department",
-      content: `Students at Maria Theresa Ledochowska College showcased extraordinary speed, stamina, and team spirit during the annual Inter-House Sports and Athletics Championships.
-
-The competition brought together students from St. Theresa, St. Joseph, St. Augustine, and St. Jude houses, competing in track sprints, middle-distance races, relays, and field athletics.
-
-The college administration commended all athletes and sports teachers for championing physical health and discipline.`
     },
     {
       id: "news-culture",
@@ -512,7 +418,7 @@ The newly inducted student council pledged to uphold the college motto, 'Learnin
       title: "Cultural Gala, MDD & School Celebrations",
       category: "Events",
       description: "Students celebrating cultural heritage and faith through music, dance, and drama.",
-      image: "assets/images/music dance and drama.jpg"
+      image: "assets/images/school actvities mdd.jpeg"
     },
     {
       id: "gal-computer-room",
@@ -533,14 +439,49 @@ The newly inducted student council pledged to uphold the college motto, 'Learnin
       title: "College Reading Room",
       category: "Academics",
       description: "Bookshelves and study space in the college reading room.",
-      image: "assets/images/reading room.jpeg"
+      image: "assets/images/library.jpeg"
     },
     {
       id: "gal-college-grounds",
       title: "Students in the College Compound",
       category: "Campus",
       description: "Students walking through the college compound with campus buildings in the background.",
-      image: "assets/images/students-in-the-compound.jpeg"
+      image: "assets/images/school view upper.jpeg"
+    },
+    {
+      id: "gal-dedication",
+      title: "School Dedication Day",
+      category: "Events",
+      description: "The school community gathers in faith for a special dedication celebration.",
+      image: "assets/images/dedication day.jpeg"
+    },
+    {
+      id: "gal-general-mass",
+      title: "School Community at General Mass",
+      category: "Events",
+      description: "Students, staff, and guests join together for the school community's general Mass.",
+      image: "assets/images/general mass.jpeg"
+    },
+    {
+      id: "gal-prayer",
+      title: "Student Prayer and Reflection",
+      category: "Events",
+      description: "A student leads the school community in prayer and reflection.",
+      image: "assets/images/prayer.jpeg"
+    },
+    {
+      id: "gal-religion",
+      title: "Religious Education and Service",
+      category: "Students",
+      description: "Students take part in religious education and service as part of the school's faith formation.",
+      image: "assets/images/religion.jpeg"
+    },
+    {
+      id: "gal-religion-2",
+      title: "Student Faith Community",
+      category: "Students",
+      description: "Students participate in the school's faith community and religious life.",
+      image: "assets/images/religion 2.jpeg"
     }
   ],
 

@@ -196,14 +196,6 @@ values
    'Parents and guardians are cordially invited to visit the school campus in Lugazi (P. O. Box 258, Lugazi) to secure admission vacancies.' || E'\n\n' ||
    'For details, contact the Office Landline: 0392 946071, Mobile / WhatsApp: +256 (0) 772 450 925, or mariatheresalego@gmail.com.',
    true),
-  ('annual-inter-house-sports', 'Sports', 'Recent Event',
-   'Annual Inter-House Sports & Track Championships Draw Record Crowds',
-   'MTLC athletes moving at full speed across track and field events in fierce inter-house athletic competition.',
-   'assets/images/sports.jpg', 'Sports Department',
-   'Students at Maria Theresa Ledochowska College showcased extraordinary speed, stamina, and team spirit during the annual Inter-House Sports and Athletics Championships.' || E'\n\n' ||
-   'The competition brought together students from St. Theresa, St. Joseph, St. Augustine, and St. Jude houses, competing in track sprints, middle-distance races, relays, and field athletics.' || E'\n\n' ||
-   'The college administration commended all athletes and sports teachers for championing physical health and discipline.',
-   true),
   ('mdd-cultural-gala', 'Events', 'Cultural Week',
    'Music, Dance & Drama (MDD) Cultural Gala Celebrates Ugandan Heritage',
    'Students moving and dancing in vibrant traditional attire during the thrilling annual cultural gala and music festival.',
@@ -222,7 +214,7 @@ on conflict (slug) do nothing;
 
 insert into public.gallery_items (title, category, description, image_url, sort_order, published)
 values
-  ('Science Laboratory & Practical Chemistry', 'Academics', 'Students conducting chemistry and biology practical investigations in the modern science laboratory.', 'assets/images/science lab.png', 1, true),
+  ('Science Laboratory & Practical Chemistry', 'Academics', 'Students conducting chemistry and biology practical investigations in the modern science laboratory.', 'assets/images/sciences 1.jpg', 1, true),
   ('College Student Body & Uniform Assembly', 'Students', 'Scholars of Maria Theresa Ledochowska College in neat royal blue school uniforms on campus parade.', 'assets/images/Maria Theresa College Group Photo.png', 2, true),
   ('Computer Laboratory & ICT Practicals', 'Academics', 'Students engaged in computer studies, typing, and digital research in the modern ICT laboratory suite.', 'assets/images/Focused Students in a Bright Computer Lab.png', 3, true),
   ('Central College Library & Reading Corner', 'Academics', 'Focused study and reference work in the collegiate library surrounded by extensive book collections.', 'assets/images/Bright School Library Reading Corner.png', 4, true),

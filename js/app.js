@@ -372,6 +372,9 @@ function renderDepartments() {
       <div class="dept-card-content">
         <h4 class="dept-name">${dept.name}</h4>
         <p class="dept-desc">${dept.description}</p>
+        <div class="subject-tags">
+          ${dept.subjects.map(subject => `<span class="subject-tag">${subject}</span>`).join('')}
+        </div>
         <div class="dept-meta">
           <span class="dept-faculty-count">${dept.headTitle}</span>
         </div>
@@ -474,7 +477,9 @@ function renderNews() {
     window.mtlcSupabase.select('news_posts', { order: 'created_at.desc', limit: 100 })
       .then(posts => {
         if (!posts.length) return;
-        newsItems = posts.map(post => ({
+        newsItems = posts
+          .filter(post => post.title !== 'Annual Inter-House Sports & Track Championships Draw Record Crowds')
+          .map(post => ({
           id: post.slug,
           category: post.category,
           date: post.date_label,
@@ -483,7 +488,7 @@ function renderNews() {
           image: post.image_url,
           author: post.author,
           content: post.content
-        }));
+          }));
         const activeTab = tabsContainer && tabsContainer.querySelector('.filter-tab.active');
         displayNews(activeTab ? activeTab.getAttribute('data-category') : 'All', newsItems);
       })
@@ -600,7 +605,28 @@ function renderGallery() {
           !/(?:^|\/)flyer\.jpg(?:[?#]|$)/i.test(item.image_url || '')
         );
         if (!visibleGalleryItems.length) return;
-        container.innerHTML = visibleGalleryItems.map((item, index) => `
+        const suppliedPhotos = siteContent.gallery
+          .filter(item => /assets\/images\/(?:dedication day|general mass|library|prayer|religion(?: 2)?|school actvities mdd|school view upper)\.jpeg$/i.test(item.image))
+          .map(item => ({
+            title: item.title,
+            category: item.category,
+            description: item.description,
+            image_url: item.image
+          }));
+        const suppliedPhotoPaths = new Set(suppliedPhotos.map(item => item.image_url));
+        const supersededTitles = new Set([
+          "Cultural Gala, MDD & School Celebrations",
+          "College Reading Room",
+          "Students in the College Compound"
+        ]);
+        const combinedItems = [
+          ...visibleGalleryItems.filter(item =>
+            !suppliedPhotoPaths.has(item.image_url) &&
+            !supersededTitles.has(item.title)
+          ),
+          ...suppliedPhotos
+        ];
+        container.innerHTML = combinedItems.map((item, index) => `
           <div class="gallery-item revealed" data-category="${escapeHtml(item.category)}" data-index="${index}" data-src="${escapeHtml(item.image_url)}" data-title="${escapeHtml(item.title)}" data-desc="${escapeHtml(item.description)}">
             <img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)}" class="gallery-img" loading="lazy">
             <div class="gallery-overlay">
@@ -610,7 +636,7 @@ function renderGallery() {
           </div>
         `).join('');
         const allPhotosTab = tabs.find(tab => tab.getAttribute('data-category') === 'All');
-        if (allPhotosTab) allPhotosTab.textContent = `All Photos (${visibleGalleryItems.length})`;
+        if (allPhotosTab) allPhotosTab.textContent = `All Photos (${combinedItems.length})`;
         items = Array.from(container.querySelectorAll('.gallery-item'));
         attachLightboxTriggers();
       })

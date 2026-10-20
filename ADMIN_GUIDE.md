@@ -46,7 +46,7 @@ The website consists of **9 dedicated HTML pages**, linked seamlessly together w
 | **About Us** | [`about.html`](file:///d:/mtlc/about.html) | History & heritage in Lugazi, founding legacy, official mission, vision, 7 core values grid, board of governors & senior administrative leadership profiles, modern campus facilities overview. |
 | **Academics** | [`academics.html`](file:///d:/mtlc/academics.html) | UNEB curriculum overview (Center No. U2779), O-Level (UCE) subject tracks, A-Level (UACE) subject combinations (PCM, BCM, PCB, PEM, HEG, DEG, MEA, etc.), filterable academic departments, academic calendar, exam performance statistics. |
 | **Admissions** | [`admissions.html`](file:///d:/mtlc/admissions.html) | "Registration in Progress at the School Campus" announcement, 6-step admissions roadmap, S.1 / S.5 / Transfer eligibility criteria, fee structure guidelines, required documents checklist, intake deadlines, embedded interactive application form, and admissions FAQ. |
-| **Departments** | [`departments.html`](file:///d:/mtlc/departments.html) | Comprehensive profiles of all 8 teaching departments (Sciences, Mathematics, Languages, Humanities, Business Studies, ICT & Computer Studies, Technical Skills, Physical Education), faculty head listings, and dedicated laboratory facilities. |
+| **Departments** | [`departments.html`](./departments.html) | Profiles of the Vocational Studies, Language, Sciences, and Humanities departments, including their subjects, learning focus, and supporting resources. |
 | **Student Life** | [`students.html`](file:///d:/mtlc/students.html) | 12+ student clubs and academic societies, sports disciplines and trophies, student guild/prefects council structure, annual cultural gala, boarding house pastoral care, health & wellness center, and dining services. |
 | **News & Events** | [`news.html`](file:///d:/mtlc/news.html) | Filterable announcements, press releases, term dates, school calendar highlights, academic competitions, sports events, and full-article modal reading reader. |
 | **Photo Gallery** | [`gallery.html`](file:///d:/mtlc/gallery.html) | Filterable high-resolution campus photo gallery featuring the official campus prospectus, computer laboratory practicals, central library, and student assembly, with interactive fullscreen lightbox viewer and keyboard navigation (`←`, `→`, `Esc`). |
@@ -130,21 +130,21 @@ To add or update curriculum details shown on [`academics.html`](file:///d:/mtlc/
 
 ---
 
-## 4. Updating Faculty & Departments
+## 4. Updating Departments
 
 Locate the `departments` array in `js/site-content.js`.
-To change the Head of Department or teacher name shown on [`departments.html`](file:///d:/mtlc/departments.html):
+To update a department shown on [`departments.html`](./departments.html):
 
 ```javascript
 {
   id: "dept-sciences",
-  name: "Department of Sciences",
-  headName: "Mr. Patrick Mukasa, M.Sc.",
-  headTitle: "Head of Department (Physics & Chemistry)",
-  facultyCount: 14,
-  subjects: ["Physics", "Chemistry", "Biology", "Agriculture"],
-  description: "Fostering analytical rigor and practical experimentation.",
-  labCount: "3 Modern Laboratories"
+  name: "Sciences",
+  icon: "flask",
+  image: "assets/images/sciences 1.jpg",
+  headTitle: "Scientific Knowledge & Practical Skills",
+  subjects: ["Biology", "Chemistry", "Physics"],
+  description: "Develop scientific knowledge and practical skills through experiments and laboratory activities.",
+  labCount: "Well-stocked laboratory with equipment, apparatus, and materials"
 }
 ```
 
