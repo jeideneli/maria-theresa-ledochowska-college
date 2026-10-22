@@ -308,7 +308,7 @@ window.siteContent = {
       id: "leadership",
       title: "Prefectorial Guild & Uniform Parade",
       icon: "award",
-      image: "assets/images/Maria Theresa College Group Photo.png",
+      image: "assets/images/prefects photo.png",
       description: "Disciplined student body and prefects marching and moving together in royal blue uniforms, demonstrating servant leadership.",
       highlights: "Annual leadership summits, ceremonial parade processions, and student councils."
     },
