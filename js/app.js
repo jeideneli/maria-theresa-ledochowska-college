@@ -52,7 +52,8 @@ function initNavigation() {
   const toggleBtn = document.querySelector('.mobile-nav-toggle');
   const drawer = document.querySelector('.mobile-drawer');
   const backdrop = document.querySelector('.mobile-drawer-backdrop');
-  const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+  initCampusNavigation();
+  const navLinks = document.querySelectorAll('.nav-links a.nav-link, .mobile-nav-links a.mobile-nav-link');
 
   // Sticky header on scroll
   window.addEventListener('scroll', () => {
@@ -102,6 +103,13 @@ function initNavigation() {
         link.classList.remove('active');
       }
     });
+
+    document.querySelectorAll('.campus-nav-item, .mobile-campus-group').forEach(group => {
+      const active = Boolean(group.querySelector('a.active'));
+      group.classList.toggle('active', active);
+      const toggle = group.querySelector('button');
+      if (toggle) toggle.classList.toggle('active', active);
+    });
   }
   setActivePageNav();
 
@@ -125,7 +133,138 @@ function initNavigation() {
   }
 }
 
-/* ==========================================================================
+function initCampusNavigation() {
+  const campusPages = [
+    { href: 'students.html', label: 'Student Life', icon: 'users', group: 'student-life' },
+    { href: 'gallery.html', label: 'Photo Gallery', icon: 'images', group: 'student-life' },
+    { href: 'academics.html', label: 'Academics', icon: 'book-open', group: 'academics' },
+    { href: 'departments.html', label: 'Departments', icon: 'flask-conical', group: 'academics' },
+    { href: 'admissions.html', label: 'Admissions', icon: 'clipboard-list', group: 'quick-access' },
+    { href: 'news.html', label: 'News & Events', icon: 'newspaper', group: 'quick-access' }
+  ];
+
+  const desktopNav = document.querySelector('.nav-links');
+  if (desktopNav && !desktopNav.querySelector('.campus-nav-item')) {
+    const pageLinks = campusPages
+      .map(page => desktopNav.querySelector(`a[href="${page.href}"]`))
+      .filter(Boolean);
+
+    if (pageLinks.length) {
+      const item = document.createElement('div');
+      item.className = 'campus-nav-item';
+
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'nav-link campus-menu-toggle';
+      toggle.setAttribute('aria-haspopup', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = 'Campus <i data-lucide="chevron-down" aria-hidden="true"></i>';
+      item.appendChild(toggle);
+
+      const panel = document.createElement('div');
+      panel.className = 'campus-mega-menu';
+      panel.id = 'campus-mega-menu';
+      panel.setAttribute('aria-label', 'Campus pages');
+      panel.innerHTML = `
+        <div class="campus-menu-feature">
+          <img src="assets/images/Maria Theresa College Group Photo.png" alt="Maria Theresa Ledochowska College campus">
+          <p>Discover learning, student life, and opportunities at MTLC Lugazi.</p>
+        </div>
+        <div class="campus-menu-column">
+          <h2>Student Life</h2>
+          <div class="campus-menu-links" data-campus-group="student-life"></div>
+        </div>
+        <div class="campus-menu-column">
+          <h2>Learning</h2>
+          <div class="campus-menu-links" data-campus-group="academics"></div>
+        </div>
+        <div class="campus-menu-column">
+          <h2>Quick Access</h2>
+          <div class="campus-menu-links" data-campus-group="quick-access"></div>
+        </div>`;
+
+      const insertionPoint = desktopNav.querySelector('a[href="about.html"]')
+        || Array.from(desktopNav.children).find(child => pageLinks.includes(child));
+      desktopNav.insertBefore(item, insertionPoint);
+
+      campusPages.forEach(page => {
+        const link = pageLinks.find(candidate => candidate.getAttribute('href') === page.href);
+        if (!link) return;
+        link.classList.add('campus-menu-link');
+        link.innerHTML = `<i data-lucide="${page.icon}" aria-hidden="true"></i><span>${page.label}</span>`;
+        panel.querySelector(`[data-campus-group="${page.group}"]`).appendChild(link);
+      });
+
+      item.appendChild(panel);
+      toggle.setAttribute('aria-controls', panel.id);
+      toggle.addEventListener('click', () => {
+        const isOpen = item.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      desktopNav.addEventListener('click', event => {
+        if (!item.contains(event.target)) {
+          item.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!item.contains(event.target)) {
+          item.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && item.classList.contains('open')) {
+          item.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+    }
+  }
+
+  const mobileNav = document.querySelector('.mobile-nav-links');
+  if (mobileNav && !mobileNav.querySelector('.mobile-campus-group')) {
+    const pageLinks = campusPages
+      .map(page => mobileNav.querySelector(`a[href="${page.href}"]`))
+      .filter(Boolean);
+
+    if (pageLinks.length) {
+      const group = document.createElement('div');
+      group.className = 'mobile-campus-group';
+
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'mobile-nav-link mobile-campus-toggle';
+      toggle.setAttribute('aria-haspopup', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = 'Campus <i data-lucide="chevron-down" aria-hidden="true"></i>';
+
+      const submenu = document.createElement('div');
+      submenu.className = 'mobile-campus-submenu';
+      mobileNav.insertBefore(group, mobileNav.querySelector('a[href="about.html"]') || pageLinks[0]);
+      campusPages.forEach(page => {
+        const link = pageLinks.find(candidate => candidate.getAttribute('href') === page.href);
+        if (!link) return;
+        link.classList.add('mobile-campus-submenu-link');
+        link.innerHTML = `<i data-lucide="${page.icon}" aria-hidden="true"></i><span>${page.label}</span>`;
+        submenu.appendChild(link);
+      });
+
+      group.append(toggle, submenu);
+      toggle.setAttribute('aria-controls', 'mobile-campus-submenu');
+      submenu.id = 'mobile-campus-submenu';
+      toggle.addEventListener('click', () => {
+        const isOpen = group.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+  }
+
+  initLucideIcons();
+}
+
+/* ========================================================================== 
    2. ANIMATED STATISTICS COUNTERS
    ========================================================================== */
 function renderStatistics() {
@@ -362,7 +501,7 @@ function renderDepartments() {
   if (!container) return;
 
   container.innerHTML = siteContent.departments.map((dept, idx) => `
-    <div class="dept-card reveal delay-${(idx % 4) + 1}">
+    <article class="dept-card reveal delay-${(idx % 2) + 1}">
       <div class="dept-card-media">
         <img src="${dept.image}" alt="${dept.name} at MTLC Lugazi" class="dept-img" loading="lazy">
         <div class="dept-icon-badge">
@@ -370,21 +509,29 @@ function renderDepartments() {
         </div>
       </div>
       <div class="dept-card-content">
-        <h4 class="dept-name">${dept.name}</h4>
+        <span class="dept-focus">${dept.headTitle}</span>
+        <h2 class="dept-name">${dept.name}</h2>
         <p class="dept-desc">${dept.description}</p>
-        <div class="subject-tags">
-          ${dept.subjects.map(subject => `<span class="subject-tag">${subject}</span>`).join('')}
-        </div>
-        <div class="dept-meta">
-          <span class="dept-faculty-count">${dept.headTitle}</span>
+        <div class="dept-subject-section">
+          <h3>Subjects &amp; learning focus</h3>
+          <ul class="dept-subject-list">
+            ${dept.subjects.map(subject => `
+              <li>
+                <span class="dept-subject-check" aria-hidden="true"><i data-lucide="check"></i></span>
+                <span><strong>${subject.name}</strong><span class="dept-subject-description">${subject.description}</span></span>
+              </li>
+            `).join('')}
+          </ul>
         </div>
         <div class="dept-facility-highlight">
           <i data-lucide="check-circle" style="width: 15px; height: 15px; color: var(--gold-500); flex-shrink: 0;"></i>
           <span>${dept.labCount}</span>
         </div>
       </div>
-    </div>
+    </article>
   `).join('');
+
+  initLucideIcons();
 }
 
 /* ==========================================================================

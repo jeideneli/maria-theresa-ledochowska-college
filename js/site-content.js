@@ -177,40 +177,59 @@ window.siteContent = {
       name: "Vocational Studies",
       icon: "wrench",
       image: "assets/images/students-sewing.jpg",
-      headTitle: "Practical Skills",
-      subjects: ["Shoemaking", "Tailoring", "Computer Skills"],
-      description: "Learners gain practical skills in shoemaking and tailoring. Computers enhance digital learning, computer skills, and practical training, preparing learners for self-employment, entrepreneurship, and future employment.",
-      labCount: "Computers for digital learning and practical training"
+      headTitle: "Digital literacy, design & practical trades",
+      subjects: [
+        { name: "Computer Studies", description: "Build digital literacy through computer use, essential software, and responsible technology skills for learning and work." },
+        { name: "Tailoring", description: "Develop garment-making skills through fabric selection, measuring, pattern work, sewing, finishing, and simple clothing repairs." },
+        { name: "Shoemaking", description: "Learn the foundations of footwear design and construction, material use, assembly, and basic repair." }
+      ],
+      description: "Vocational Studies connects classroom learning with practical, transferable skills. Learners are introduced to digital tools and hands-on trades that can support further training, self-reliance, and future employment.",
+      labCount: "Practical training in computer skills, tailoring, and shoemaking"
     },
     {
       id: "dept-language",
-      name: "Language",
+      name: "Languages",
       icon: "book-open",
       image: "assets/images/library.jpeg",
-      headTitle: "Communication Skills",
-      subjects: ["Written Communication", "Spoken Communication", "Reading", "Comprehension"],
-      description: "Learners strengthen written and spoken communication, vocabulary, reading culture, and comprehension with support from a well-stocked library of textbooks, dictionaries, novels, reference materials, and other reading resources.",
-      labCount: "Well-stocked library"
+      headTitle: "Communication, literacy & literature",
+      subjects: [
+        { name: "English Language", description: "Develop confident spoken and written English for classroom learning, communication, and everyday life." },
+        { name: "Reading", description: "Build fluency, vocabulary, comprehension, and the habits needed to learn from a wide range of texts." },
+        { name: "Writing", description: "Practice clear, accurate writing, from sentence construction and composition to organised academic responses." },
+        { name: "Literature", description: "Explore stories, poetry, and drama to develop interpretation, imagination, appreciation, and thoughtful expression." }
+      ],
+      description: "The Languages department helps learners express ideas clearly and understand the written word. Reading and writing practice are strengthened through engagement with literature and the school's library resources.",
+      labCount: "Library resources include textbooks, dictionaries, novels, and reference materials"
     },
     {
       id: "dept-sciences",
       name: "Sciences",
       icon: "flask",
       image: "assets/images/sciences 1.jpg",
-      headTitle: "Scientific Knowledge & Practical Skills",
-      subjects: ["Biology", "Chemistry", "Physics"],
-      description: "Biology, Chemistry, and Physics develop scientific knowledge and practical skills. Experiments and other laboratory activities build scientific inquiry, critical thinking, and problem-solving.",
-      labCount: "Well-stocked laboratory with equipment, apparatus, and materials"
+      headTitle: "Scientific understanding, mathematics & inquiry",
+      subjects: [
+        { name: "Biology", description: "Study living organisms, human and plant life, health, and the relationships between organisms and their environments." },
+        { name: "Physics", description: "Explore forces, energy, matter, and physical systems through explanation, problem-solving, and practical investigation." },
+        { name: "Mathematics", description: "Strengthen numeracy, logical reasoning, quantitative analysis, and the mathematical tools used across disciplines." },
+        { name: "Chemistry", description: "Understand substances, their properties, and how they change through chemical reactions and practical study." }
+      ],
+      description: "The Sciences department develops curiosity and evidence-based thinking. Learners build core scientific knowledge and mathematical reasoning, supported by practical activities and laboratory investigation.",
+      labCount: "Laboratory activities use available equipment, apparatus, and learning materials"
     },
     {
       id: "dept-humanities",
       name: "Humanities",
       icon: "globe",
       image: "assets/images/geograpy.jpg",
-      headTitle: "Society, Culture & Citizenship",
-      subjects: ["History", "Geography", "Religious Education", "Social Sciences"],
-      description: "History, Geography, Religious Education, and related social sciences help learners understand society, culture, history, the environment, and social relationships. The department promotes analytical and decision-making skills, good citizenship, respect for cultures, moral values, and awareness of social and economic issues.",
-      labCount: "Learning for responsible citizenship and community contribution"
+      headTitle: "People, places, belief & society",
+      subjects: [
+        { name: "History", description: "Examine people, events, and ideas from the past to understand how societies change and how the past shapes the present." },
+        { name: "Geography", description: "Explore places, environments, people, and the connections between communities and the world around them." },
+        { name: "Religious Education", description: "Consider religious beliefs, values, and moral questions while developing reflection, respect, and responsible choices." },
+        { name: "Social Sciences", description: "Build understanding of communities, social relationships, citizenship, and the issues that affect people's lives." }
+      ],
+      description: "The Humanities department helps learners make sense of people, places, cultures, beliefs, and society. Study encourages informed discussion, analytical thinking, respect for different perspectives, and responsible citizenship.",
+      labCount: "Learning resources support the study of society, culture, history, and the environment"
     }
   ],
 

@@ -121,176 +121,156 @@
     </div>
   </aside>
 
-  <!-- SUBPAGE HERO BANNER -->
-  <section class="page-hero" aria-label="Page Banner">
-    <div class="container">
-      <div class="breadcrumbs">
-        <a href="index.html"><i data-lucide="home" style="width: 14px; height: 14px;"></i> Home</a>
-        <span class="divider">/</span>
-        <span class="current">Academics</span>
+  <section class="academic-hero" aria-labelledby="academic-hero-title">
+    <div class="academic-hero-shade"></div>
+    <div class="container academic-hero-content">
+      <div class="academic-eyebrow"><i data-lucide="book-open"></i> Academics at MTLC Lugazi</div>
+      <h1 id="academic-hero-title">Academic excellence <span>with purpose.</span></h1>
+      <p>We form young people to think deeply, learn confidently and use their knowledge responsibly — grounded in faith, character and service.</p>
+      <div class="academic-hero-actions">
+        <a class="academic-button academic-button-gold" href="#academic-pathways">Explore academics <i data-lucide="arrow-down"></i></a>
+        <button class="academic-button academic-button-outline open-apply-modal" type="button">Apply now <i data-lucide="arrow-right"></i></button>
       </div>
-      <h1 class="page-hero-title">Academic <span class="title-gold">Excellence</span></h1>
-      <p class="page-hero-desc">
-        Empowering ambitious young scholars through rigorous UNEB curriculums, world-class science laboratories, and digital innovation.
-      </p>
+      <div class="academic-location"><i data-lucide="map-pin"></i> O-Level &amp; A-Level · Lugazi, Uganda · UNEB Center U2779</div>
     </div>
   </section>
 
   <!-- MAIN CONTENT -->
-  <main id="main-content">
-
-    <!-- CURRICULUM OVERVIEW SECTION -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tagline">Academic Framework</span>
-          <h2 class="section-title">Comprehensive Secondary Curriculum</h2>
-          <p class="section-description">
-            Fully certified by the Ministry of Education &amp; Sports and accredited by the Uganda National Examinations Board (UNEB).
-          </p>
+  <main id="main-content" class="academic-page">
+    <section class="academic-philosophy section-padding">
+      <div class="container academic-philosophy-grid">
+        <div class="academic-philosophy-image reveal">
+          <img src="assets/images/students.JPG" alt="Students learning and growing together at MTLC Lugazi" loading="lazy">
+          <div class="academic-image-note"><span>Education is</span><strong>formation for life.</strong></div>
         </div>
-
-        <div class="mv-grid">
-          <div class="mv-card reveal delay-1">
-            <div class="mv-icon"><i data-lucide="book" style="width: 28px; height: 28px;"></i></div>
-            <h3 class="mv-title">Ordinary Level (UCE) — S.1 to S.4</h3>
-            <p class="mv-body">
-              Learners study across vocational studies, language, sciences, and humanities. Practical learning, communication, scientific inquiry, critical thinking, and understanding of society are supported by computers, a well-stocked library, and a well-stocked laboratory.
-            </p>
-            <ul class="checklist-styled" style="margin-top: 16px;">
-              <li>Practical skills in shoemaking and tailoring</li>
-              <li>Written and spoken communication supported by library resources</li>
-              <li>Scientific experiments and activities in Biology, Chemistry, and Physics</li>
-            </ul>
-          </div>
-
-          <div class="mv-card vision-card reveal delay-2">
-            <div class="mv-icon"><i data-lucide="award" style="width: 28px; height: 28px;"></i></div>
-            <h3 class="mv-title">Advanced Level (UACE) — S.5 &amp; S.6</h3>
-            <p class="mv-body">
-              Learners develop knowledge and skills across the academic disciplines, with opportunities to build critical thinking, analytical, decision-making, and problem-solving abilities.
-            </p>
-            <ul class="checklist-styled" style="margin-top: 16px;">
-              <li>History, Geography, and Religious Education</li>
-              <li>Scientific inquiry and practical laboratory activities</li>
-              <li>Good citizenship, moral values, and respect for different cultures</li>
-            </ul>
+        <div class="academic-philosophy-copy reveal delay-1">
+          <span class="academic-kicker"><i data-lucide="lightbulb"></i> Our academic philosophy</span>
+          <h2>We teach for the <span>life beyond the classroom.</span></h2>
+          <p>At Maria Theresa Ledochowska College, academic development is part of a wider formation. We want learners to acquire knowledge, develop sound judgement, discover their abilities and grow into responsible young people.</p>
+          <p>Our academic programme encourages curiosity, discipline, critical thinking and a commitment to doing one's best. These qualities are strengthened by the school's Catholic identity and its emphasis on moral and spiritual formation.</p>
+          <div class="academic-values">
+            <span><i data-lucide="brain"></i> Knowledge</span>
+            <span><i data-lucide="scale"></i> Character</span>
+            <span><i data-lucide="cross"></i> Faith</span>
+            <span><i data-lucide="hand-heart"></i> Service</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FILTERABLE ACADEMIC PROGRAMS SECTION -->
-    <section class="section-padding bg-subtle">
+    <section id="academic-pathways" class="academic-pathways section-padding">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tagline">Disciplines &amp; Tracks</span>
-          <h2 class="section-title">Explore Academic Programs</h2>
-          <p class="section-description">
-            Explore the subjects, learning focus, and resources in each of our four departments.
-          </p>
+        <div class="academic-section-heading reveal">
+          <span class="academic-kicker"><i data-lucide="route"></i> Academic pathways</span>
+          <h2>A pathway for every <span>stage of learning.</span></h2>
+          <p>Our O-Level and A-Level programmes provide a structured progression from broad foundational learning to focused preparation for further education and life.</p>
         </div>
-
-        <div id="academics-tabs" class="filter-tabs">
-          <button class="filter-tab active" data-category="All">All Programs</button>
-          <button class="filter-tab" data-category="Vocational Studies">Vocational Studies</button>
-          <button class="filter-tab" data-category="Language">Language</button>
-          <button class="filter-tab" data-category="Sciences">Sciences</button>
-          <button class="filter-tab" data-category="Humanities">Humanities</button>
-        </div>
-        <div id="academics-grid" class="programs-grid">
-          <!-- Sciences -->
-          <article class="program-card revealed" data-category="Sciences">
-            <div class="program-card-header">
-              <span class="program-badge">Sciences</span>
-              <h3 class="program-title">Sciences</h3>
-            </div>
-            <div class="program-body">
-              <div class="program-tagline">Scientific knowledge and practical investigation through experiments.</div>
-              <p class="program-desc">Biology, Chemistry, and Physics combine scientific knowledge with laboratory activities. Learners use equipment, apparatus, and materials to conduct experiments and develop inquiry, critical thinking, and problem-solving skills.</p>
-              <div class="subject-tags">
-                <span class="subject-tag">Physics</span>
-                <span class="subject-tag">Chemistry</span>
-                <span class="subject-tag">Biology</span>
-                <span class="subject-tag">Scientific Inquiry</span>
-              </div>
-              <div class="program-footer">
-                <span class="text-navy font-bold text-sm">Levels: O-Level &amp; A-Level</span>
-                <button class="btn btn-navy btn-sm open-apply-modal">Apply Now</button>
-              </div>
-            </div>
+        <div class="academic-pathway-grid">
+          <article class="academic-pathway-card reveal">
+            <div class="academic-pathway-top"><span>01</span><b>O-Level</b></div>
+            <h3>Build a strong foundation.</h3>
+            <p>Learners develop broad knowledge, practical skills, study habits and the confidence needed to progress to advanced education.</p>
+            <ul>
+              <li><i data-lucide="book-open"></i> Broad curriculum</li>
+              <li><i data-lucide="lightbulb"></i> Critical thinking</li>
+              <li><i data-lucide="graduation-cap"></i> UCE preparation</li>
+            </ul>
           </article>
-
-          <!-- Languages -->
-          <article class="program-card revealed" data-category="Language">
-            <div class="program-card-header">
-              <span class="program-badge">Language</span>
-              <h3 class="program-title">Language</h3>
-            </div>
-            <div class="program-body">
-              <div class="program-tagline">Building confident communication in speech and writing.</div>
-              <p class="program-desc">Learners develop essential written and spoken communication skills. The well-stocked library provides textbooks, dictionaries, novels, reference materials, and other reading resources to strengthen vocabulary, reading culture, comprehension, and communication.</p>
-              <div class="subject-tags">
-                <span class="subject-tag">Written Communication</span>
-                <span class="subject-tag">Spoken Communication</span>
-                <span class="subject-tag">Reading</span>
-                <span class="subject-tag">Comprehension</span>
-              </div>
-              <div class="program-footer">
-                <span class="text-navy font-bold text-sm">Levels: O-Level &amp; A-Level</span>
-                <button class="btn btn-navy btn-sm open-apply-modal">Apply Now</button>
-              </div>
-            </div>
+          <article class="academic-pathway-card academic-pathway-card-dark reveal delay-1">
+            <div class="academic-pathway-top"><span>02</span><b>A-Level</b></div>
+            <h3>Focus your direction.</h3>
+            <p>Learners pursue focused subject combinations that deepen knowledge and prepare them for further study and responsible citizenship.</p>
+            <ul>
+              <li><i data-lucide="flask-conical"></i> Science pathways</li>
+              <li><i data-lucide="landmark"></i> Arts pathways</li>
+              <li><i data-lucide="graduation-cap"></i> UACE preparation</li>
+            </ul>
           </article>
-
-          <!-- Vocational -->
-          <article class="program-card revealed" data-category="Vocational Studies">
-            <div class="program-card-header">
-              <span class="program-badge">Vocational Studies</span>
-              <h3 class="program-title">Vocational Studies</h3>
-            </div>
-            <div class="program-body">
-              <div class="program-tagline">Practical skills for self-employment, entrepreneurship, and future careers.</div>
-              <p class="program-desc">Learners develop practical skills in shoemaking and tailoring. Computers support digital learning, computer skills, and practical training, preparing learners for self-employment, entrepreneurship, and future employment.</p>
-              <div class="subject-tags">
-                <span class="subject-tag">Shoemaking</span>
-                <span class="subject-tag">Tailoring</span>
-                <span class="subject-tag">Computer Skills</span>
-              </div>
-              <div class="program-footer">
-                <span class="text-navy font-bold text-sm">Levels: O-Level &amp; A-Level</span>
-                <button class="btn btn-navy btn-sm open-apply-modal">Apply Now</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Humanities -->
-          <article class="program-card revealed" data-category="Humanities">
-            <div class="program-card-header">
-              <span class="program-badge">Humanities</span>
-              <h3 class="program-title">Humanities</h3>
-            </div>
-            <div class="program-body">
-              <div class="program-tagline">Understanding society, culture, history, and the environment.</div>
-              <p class="program-desc">History, Geography, Religious Education, and related social sciences develop critical thinking, analytical, decision-making, and problem-solving skills. Learners build good citizenship, respect for cultures, moral values, and awareness of social and economic issues.</p>
-              <div class="subject-tags">
-                <span class="subject-tag">History</span>
-                <span class="subject-tag">Geography</span>
-                <span class="subject-tag">Religious Education</span>
-                <span class="subject-tag">Social Sciences</span>
-              </div>
-              <div class="program-footer">
-                <span class="text-navy font-bold text-sm">Levels: O-Level &amp; A-Level</span>
-                <button class="btn btn-navy btn-sm open-apply-modal">Apply Now</button>
-              </div>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
 
+    <section class="academic-curriculum section-padding">
+      <div class="container">
+        <div class="academic-curriculum-heading reveal">
+          <div>
+            <span class="academic-kicker"><i data-lucide="library"></i> O-Level curriculum</span>
+            <h2>Learn broadly. Think <span>independently.</span></h2>
+          </div>
+          <p>A broad curriculum gives learners the knowledge and skills to discover their strengths and prepare for the next stage of education.</p>
+        </div>
+        <div class="academic-subject-grid">
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="atom"></i></span><div><small>Science</small><h3>Biology</h3><p>Understanding life, health and the living world.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="flask-conical"></i></span><div><small>Science</small><h3>Chemistry</h3><p>Exploring matter, reactions and scientific thinking.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="audio-lines"></i></span><div><small>Science</small><h3>Physics</h3><p>Developing analytical thinking through the physical world.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="globe-2"></i></span><div><small>Humanities</small><h3>Geography</h3><p>Understanding people, places, environment and society.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="landmark"></i></span><div><small>Humanities</small><h3>History</h3><p>Learning from the events and experiences that shaped society.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="cross"></i></span><div><small>Formation</small><h3>Religious Education</h3><p>Growing in faith, conscience and responsible living.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="languages"></i></span><div><small>Languages</small><h3>Written &amp; Spoken Communication</h3><p>Building clear communication, comprehension and expression.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="book-open"></i></span><div><small>Languages</small><h3>Reading &amp; Comprehension</h3><p>Strengthening vocabulary, reading culture and understanding.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="laptop"></i></span><div><small>Practical &amp; vocational</small><h3>Computer Skills</h3><p>Developing digital confidence through supported learning.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="scissors"></i></span><div><small>Practical &amp; vocational</small><h3>Tailoring</h3><p>Building hands-on skills through practical training.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="hammer"></i></span><div><small>Practical &amp; vocational</small><h3>Shoemaking</h3><p>Learning practical skills for employment and self-reliance.</p></div></article>
+          <article class="academic-subject-card"><span class="academic-subject-icon"><i data-lucide="monitor"></i></span><div><small>Practical &amp; vocational</small><h3>Digital Learning</h3><p>Using computers and digital resources to support learning.</p></div></article>
+        </div>
+        <p class="academic-curriculum-note">Subject availability and combinations may vary by class and academic year. Contact the school for current options.</p>
+      </div>
+    </section>
+
+    <section class="academic-combinations section-padding">
+      <div class="container academic-combinations-grid">
+        <div class="academic-combinations-copy reveal">
+          <span class="academic-kicker"><i data-lucide="graduation-cap"></i> A-Level programme</span>
+          <h2>Choose a direction.<br><span>Build a future.</span></h2>
+          <p>A-Level study allows learners to focus on areas of interest while developing the academic discipline needed for further study.</p>
+          <div class="academic-combination-note"><i data-lucide="info"></i><span>Ask the school about current subject combinations and the available subsidiary subjects.</span></div>
+        </div>
+        <div class="academic-combination-grid">
+          <article><small>Sciences</small><h3>Scientific study</h3><p>Biology · Chemistry · Physics</p></article>
+          <article><small>Humanities</small><h3>People &amp; society</h3><p>History · Geography · Religious Education</p></article>
+          <article><small>Languages</small><h3>Communication</h3><p>Written communication · Spoken communication</p></article>
+          <article><small>Practical learning</small><h3>Applied skills</h3><p>Computer skills · Vocational studies</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="academic-support section-padding">
+      <div class="container">
+        <div class="academic-section-heading reveal">
+          <span class="academic-kicker"><i data-lucide="heart-handshake"></i> Learner support</span>
+          <h2>Every learner deserves <span>the chance to thrive.</span></h2>
+          <p>Academic progress is supported through a learning environment that encourages discipline, collaboration and personal growth.</p>
+        </div>
+        <div class="academic-support-grid">
+          <article><span><i data-lucide="presentation"></i></span><h3>Academic Support</h3><p>Additional guidance where learners need help to strengthen understanding.</p></article>
+          <article><span><i data-lucide="users-round"></i></span><h3>Study Groups</h3><p>Collaborative learning that encourages discussion, responsibility and peer support.</p></article>
+          <article><span><i data-lucide="star"></i></span><h3>Advanced Learning</h3><p>Encouraging motivated learners to stretch themselves and deepen their knowledge.</p></article>
+          <article><span><i data-lucide="messages-square"></i></span><h3>Guidance &amp; Counselling</h3><p>Supporting learners as they navigate academic, personal and future decisions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="academic-cta-section">
+      <div class="container">
+        <div class="academic-cta">
+          <div>
+            <span class="academic-kicker"><i data-lucide="graduation-cap"></i> Begin the journey</span>
+            <h2>Give your child an education <span>that goes beyond the classroom.</span></h2>
+            <p>Discover a school where academic learning is joined with faith, character, discipline and service.</p>
+          </div>
+          <div class="academic-cta-actions">
+            <button type="button" class="academic-button academic-button-gold open-apply-modal">Apply now <i data-lucide="arrow-right"></i></button>
+            <a class="academic-button academic-button-chat" href="https://wa.me/256772450925" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle"></i> Chat with us</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <div class="academic-floating-actions" aria-label="Quick contact actions">
+    <button type="button" class="academic-button academic-button-gold open-apply-modal"><i data-lucide="pencil"></i> Apply now</button>
+    <a class="academic-button academic-button-chat" href="https://wa.me/256772450925" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle"></i> Chat with us</a>
+  </div>
 
   <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
