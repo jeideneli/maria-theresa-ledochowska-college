@@ -324,14 +324,6 @@ window.siteContent = {
       highlights: "Weekly college assembly, Christian values formation, and house meetings."
     },
     {
-      id: "leadership",
-      title: "Prefectorial Guild & Uniform Parade",
-      icon: "award",
-      image: "assets/images/prefects photo.png",
-      description: "Disciplined student body and prefects marching and moving together in royal blue uniforms, demonstrating servant leadership.",
-      highlights: "Annual leadership summits, ceremonial parade processions, and student councils."
-    },
-    {
       id: "drama-mdd",
       title: "Music, Dance & Drama (MDD) Performances",
       icon: "sparkles",
@@ -378,13 +370,13 @@ Scholars performed traditional folk dances from across Uganda, staging impressiv
       id: "news-assembly",
       category: "Academic",
       date: "Campus Update",
-      title: "Student Leadership Guild Induction & General Assembly",
-      summary: "The student body moving together in disciplined assembly on campus grounds as new prefectorial leaders are sworn in.",
+      title: "Student Assembly & Campus Community",
+      summary: "Students gather on campus for assembly, reflection, and shared community activities.",
       image: "assets/images/DSC_1170.JPG",
       author: "Dean of Students",
-      content: `Maria Theresa Ledochowska College conducted a grand student assembly and leadership swearing-in ceremony on campus grounds.
+      content: `Maria Theresa Ledochowska College brings students together for assemblies and community activities on campus.
 
-The newly inducted student council pledged to uphold the college motto, 'Learning Today... Leading Tomorrow', by fostering peer discipline, academic diligence, and moral integrity.`
+These gatherings support fellowship, reflection, shared responsibility, and the college motto, 'Learning Today... Leading Tomorrow'.`
     }
   ],
 

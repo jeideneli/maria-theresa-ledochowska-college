@@ -91,15 +91,14 @@ function initNavigation() {
 
   // Set active link based on current page URL
   function setActivePageNav() {
-    const path = window.location.pathname;
-    let currentPage = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
-    if (!currentPage.endsWith('.html')) currentPage = 'index.html';
-
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (href === currentPage || (currentPage === 'index.html' && (href === './' || href === 'index.html'))) {
+      if (!href || href.startsWith('#')) return;
+
+      const linkPath = new URL(href, window.location.href).pathname;
+      if (linkPath === window.location.pathname) {
         link.classList.add('active');
-      } else if (!href.startsWith('#')) {
+      } else {
         link.classList.remove('active');
       }
     });
@@ -136,20 +135,27 @@ function initNavigation() {
 function initCampusNavigation() {
   const campusPages = [
     { href: 'students.html', label: 'Student Life', icon: 'users', group: 'student-life' },
+    { href: 'campus/student-leadership.html', label: 'Student Leadership', icon: 'user-round-cog', group: 'student-life' },
     { href: 'gallery.html', label: 'Photo Gallery', icon: 'images', group: 'student-life' },
     { href: 'academics.html', label: 'Academics', icon: 'book-open', group: 'academics' },
     { href: 'departments.html', label: 'Departments', icon: 'flask-conical', group: 'academics' },
     { href: 'admissions.html', label: 'Admissions', icon: 'clipboard-list', group: 'quick-access' },
     { href: 'news.html', label: 'News & Events', icon: 'newspaper', group: 'quick-access' }
   ];
+  const isCampusPage = window.location.pathname.includes('/campus/');
+  const siteBase = new URL(isCampusPage ? '../' : './', window.location.href);
+  const getPageUrl = page => new URL(page.href, siteBase);
+  const getPageLink = (nav, page) => Array.from(nav.querySelectorAll('a[href]'))
+    .find(link => new URL(link.getAttribute('href'), window.location.href).pathname === getPageUrl(page).pathname);
+  const getPageHref = page => isCampusPage
+    ? (page.href.startsWith('campus/') ? page.href.substring('campus/'.length) : `../${page.href}`)
+    : page.href;
 
   const desktopNav = document.querySelector('.nav-links');
   if (desktopNav && !desktopNav.querySelector('.campus-nav-item')) {
-    const pageLinks = campusPages
-      .map(page => desktopNav.querySelector(`a[href="${page.href}"]`))
-      .filter(Boolean);
+    const pageLinks = campusPages.map(page => getPageLink(desktopNav, page)).filter(Boolean);
 
-    if (pageLinks.length) {
+    if (pageLinks.length || desktopNav.children.length) {
       const item = document.createElement('div');
       item.className = 'campus-nav-item';
 
@@ -165,9 +171,10 @@ function initCampusNavigation() {
       panel.className = 'campus-mega-menu';
       panel.id = 'campus-mega-menu';
       panel.setAttribute('aria-label', 'Campus pages');
+      const featureImage = isCampusPage ? '../assets/images/school view.jpeg' : 'assets/images/school view.jpeg';
       panel.innerHTML = `
         <div class="campus-menu-feature">
-          <img src="assets/images/Maria Theresa College Group Photo.png" alt="Maria Theresa Ledochowska College campus">
+          <img src="${featureImage}" alt="Maria Theresa Ledochowska College campus">
           <p>Discover learning, student life, and opportunities at MTLC Lugazi.</p>
         </div>
         <div class="campus-menu-column">
@@ -184,12 +191,15 @@ function initCampusNavigation() {
         </div>`;
 
       const insertionPoint = desktopNav.querySelector('a[href="about.html"]')
+        || desktopNav.querySelector('a[href="../about.html"]')
         || Array.from(desktopNav.children).find(child => pageLinks.includes(child));
       desktopNav.insertBefore(item, insertionPoint);
 
       campusPages.forEach(page => {
-        const link = pageLinks.find(candidate => candidate.getAttribute('href') === page.href);
-        if (!link) return;
+        const link = getPageLink(desktopNav, page) || document.createElement('a');
+        link.href = getPageHref(page);
+        link.textContent = page.label;
+        link.setAttribute('data-campus-page', page.href);
         link.classList.add('campus-menu-link');
         link.innerHTML = `<i data-lucide="${page.icon}" aria-hidden="true"></i><span>${page.label}</span>`;
         panel.querySelector(`[data-campus-group="${page.group}"]`).appendChild(link);
@@ -225,11 +235,9 @@ function initCampusNavigation() {
 
   const mobileNav = document.querySelector('.mobile-nav-links');
   if (mobileNav && !mobileNav.querySelector('.mobile-campus-group')) {
-    const pageLinks = campusPages
-      .map(page => mobileNav.querySelector(`a[href="${page.href}"]`))
-      .filter(Boolean);
+    const pageLinks = campusPages.map(page => getPageLink(mobileNav, page)).filter(Boolean);
 
-    if (pageLinks.length) {
+    if (pageLinks.length || mobileNav.children.length) {
       const group = document.createElement('div');
       group.className = 'mobile-campus-group';
 
@@ -242,10 +250,15 @@ function initCampusNavigation() {
 
       const submenu = document.createElement('div');
       submenu.className = 'mobile-campus-submenu';
-      mobileNav.insertBefore(group, mobileNav.querySelector('a[href="about.html"]') || pageLinks[0]);
+      mobileNav.insertBefore(
+        group,
+        mobileNav.querySelector('a[href="about.html"], a[href="../about.html"]') || pageLinks[0]
+      );
       campusPages.forEach(page => {
-        const link = pageLinks.find(candidate => candidate.getAttribute('href') === page.href);
-        if (!link) return;
+        const link = getPageLink(mobileNav, page) || document.createElement('a');
+        link.href = getPageHref(page);
+        link.textContent = page.label;
+        link.setAttribute('data-campus-page', page.href);
         link.classList.add('mobile-campus-submenu-link');
         link.innerHTML = `<i data-lucide="${page.icon}" aria-hidden="true"></i><span>${page.label}</span>`;
         submenu.appendChild(link);

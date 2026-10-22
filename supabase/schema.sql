@@ -204,13 +204,20 @@ values
    'Scholars performed traditional folk dances from across Uganda, staging impressive choreography, theatrical skits, and choral music that highlighted cultural diversity and Christian unity.',
    true),
   ('student-leadership-induction', 'Academic', 'Campus Update',
-   'Student Leadership Guild Induction & General Assembly',
-   'The student body moving together in disciplined assembly on campus grounds as new prefectorial leaders are sworn in.',
+   'Student Assembly & Campus Community',
+   'Students gather on campus for assembly, reflection, and shared community activities.',
    'assets/images/DSC_1170.JPG', 'Dean of Students',
-   'Maria Theresa Ledochowska College conducted a grand student assembly and leadership swearing-in ceremony on campus grounds.' || E'\n\n' ||
-   'The newly inducted student council pledged to uphold the college motto, Learning Today... Leading Tomorrow, by fostering peer discipline, academic diligence, and moral integrity.',
+   'Maria Theresa Ledochowska College brings students together for assemblies and community activities on campus.' || E'\n\n' ||
+   'These gatherings support fellowship, reflection, shared responsibility, and the college motto, Learning Today... Leading Tomorrow.',
    true)
 on conflict (slug) do nothing;
+
+update public.news_posts
+set title = 'Student Assembly & Campus Community',
+    summary = 'Students gather on campus for assembly, reflection, and shared community activities.',
+    content = 'Maria Theresa Ledochowska College brings students together for assemblies and community activities on campus.' || E'\n\n' ||
+      'These gatherings support fellowship, reflection, shared responsibility, and the college motto, Learning Today... Leading Tomorrow.'
+where slug = 'student-leadership-induction';
 
 insert into public.gallery_items (title, category, description, image_url, sort_order, published)
 values
