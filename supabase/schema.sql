@@ -223,17 +223,14 @@ insert into public.gallery_items (title, category, description, image_url, sort_
 values
   ('Science Laboratory & Practical Chemistry', 'Academics', 'Students conducting chemistry and biology practical investigations in the modern science laboratory.', 'assets/images/sciences 1.jpg', 1, true),
   ('College Student Body & Uniform Assembly', 'Students', 'Scholars of Maria Theresa Ledochowska College in neat royal blue school uniforms on campus parade.', 'assets/images/Maria Theresa College Group Photo.png', 2, true),
-  ('Computer Laboratory & ICT Practicals', 'Academics', 'Students engaged in computer studies, typing, and digital research in the modern ICT laboratory suite.', 'assets/images/Focused Students in a Bright Computer Lab.png', 3, true),
   ('Central College Library & Reading Corner', 'Academics', 'Focused study and reference work in the collegiate library surrounded by extensive book collections.', 'assets/images/Bright School Library Reading Corner.png', 4, true),
   ('Vocational Tailoring & Skilling Workshop', 'Campus', 'Hands-on vocational skilling and garment construction in our well-equipped tailoring training suite.', 'assets/images/Bright African Sewing Class Workshop.png', 5, true),
   ('Physics, Chemistry & Biology Practical Sessions', 'Academics', 'Science practical sessions and experimental investigations guided by science educators.', 'assets/images/DSC_1161.JPG', 6, true),
   ('Humanities, Debate & Student Mentorship', 'Campus', 'Civic education, seminar presentations, and student mentorship sessions.', 'assets/images/DSC_1167.JPG', 7, true),
-  ('Inter-House Athletics & Sports Championships', 'Sports', 'Vibrant athletics and sports activities during inter-house championships in Lugazi.', 'assets/images/sports.jpg', 8, true),
   ('Student Community Assembly & Fellowship', 'Students', 'Scholars gathered on campus for school assembly, values formation, and leadership mentoring.', 'assets/images/DSC_1170.JPG', 9, true),
   ('Cultural Gala, MDD & School Celebrations', 'Events', 'Students celebrating cultural heritage and faith through music, dance, and drama.', 'assets/images/music dance and drama.jpg', 10, true),
-  ('MTLC Computer Laboratory', 'Academics', 'Computer workstations in the college ICT learning space.', 'assets/images/computer-lab.jpeg', 12, true),
   ('Covered Campus Passage', 'Campus', 'A sheltered walkway connecting the college campus buildings.', 'assets/images/passway.jpeg', 13, true),
-  ('Sick Bay and Skilling Room', 'Campus', 'The college building housing student wellbeing and practical-skills spaces.', 'assets/images/sick-bay-and-skilling-room.jpeg', 14, true),
+  ('School Way Path', 'Campus', 'A covered school way path linking the campus buildings and providing safe access between key areas of the college.', 'assets/images/sick-bay-and-skilling-room.jpeg', 14, true),
   ('College Reading Room', 'Academics', 'Bookshelves and study space in the college reading room.', 'assets/images/reading room.jpeg', 15, true),
   ('Students in the College Compound', 'Campus', 'Students walking through the college compound with campus buildings in the background.', 'assets/images/students-in-the-compound.jpeg', 16, true)
 on conflict (title) do nothing;

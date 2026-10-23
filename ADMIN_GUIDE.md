@@ -28,7 +28,7 @@ The Supabase tables are created by running the SQL setup below. The protected ad
    ```
 
 5. Visit `/admin.html` on the deployed website and sign in with that account. The admin page can manage news and gallery entries and review applications and contact enquiries.
-6. News and gallery image paths can be existing website paths such as `assets/images/computer-lab.jpeg`. To add a new image, upload the file to the website's `assets/images/` folder before publishing its path.
+6. News and gallery image paths can be existing website paths such as `assets/images/library.jpeg`. To add a new image, upload the file to the website's `assets/images/` folder before publishing its path.
 
 The public website uses only the Supabase Project URL and **publishable** key in `js/supabase-client.js`. Never put a database password, secret key, or service-role key in website files. Row-level security prevents public users from reading applications, enquiries, or newsletter email addresses. Only an authorized admin can view or edit those records.
 

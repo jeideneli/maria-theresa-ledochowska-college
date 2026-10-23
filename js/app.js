@@ -580,7 +580,7 @@ function renderNews() {
   const tabsContainer = document.getElementById('news-tabs');
   if (!container) return;
 
-  const categories = ['All', 'Academic', 'Events', 'Sports'];
+  const categories = ['All', 'Academic', 'Events'];
   let newsItems = siteContent.newsAndEvents || [];
 
   if (tabsContainer) {
@@ -638,7 +638,11 @@ function renderNews() {
       .then(posts => {
         if (!posts.length) return;
         newsItems = posts
-          .filter(post => post.title !== 'Annual Inter-House Sports & Track Championships Draw Record Crowds')
+          .filter(post =>
+            !/sports|athletics|inter-house/i.test(post.title || '') &&
+            !/sports|athletics/i.test(post.category || '') &&
+            post.title !== 'Annual Inter-House Sports & Track Championships Draw Record Crowds'
+          )
           .map(post => ({
           id: post.slug,
           category: post.category,
@@ -759,7 +763,35 @@ function renderGallery() {
     container.dataset.supabaseLoaded = 'true';
     window.mtlcSupabase.select('gallery_items', { order: 'sort_order.asc', limit: 500 })
       .then(galleryItems => {
-        const visibleGalleryItems = galleryItems.filter(item =>
+        const normalizeLegacyGalleryTitle = item => {
+          const title = (item.title || '').trim();
+          const normalized = title.replace(/\s+/g, ' ');
+          if (/sick\s*bay|skilling\s*room/i.test(normalized)) {
+            return {
+              ...item,
+              title: 'School Way Path',
+              category: 'Campus',
+              description: 'A covered school way path linking the campus buildings and providing safe access between key areas of the college.'
+            };
+          }
+          return item;
+        };
+
+        const galleryItemsWithNormalizedTitles = galleryItems.map(normalizeLegacyGalleryTitle);
+
+        const isHiddenGalleryItem = item => {
+          const title = item.title || '';
+          const imageUrl = item.image_url || '';
+          return (
+            item.category === 'Sports' ||
+            /inter-house.*(?:athletics|sports)|(?:athletics|sports).*championships/i.test(title) ||
+            /computer\s*(?:laboratory|lab)|ict\s*practicals|mtlc\s*computer\s*laboratory/i.test(title) ||
+            /computer(?:[-\s]|%20)?lab/i.test(imageUrl)
+          );
+        };
+
+        const visibleGalleryItems = galleryItemsWithNormalizedTitles.filter(item =>
+          !isHiddenGalleryItem(item) &&
           !/prospectus|brochure/i.test(item.title || '') &&
           !/^(?:covered campus passage|vocational tailoring\s*&\s*skilling workshop|science laboratory\s*&\s*practical chemistry|central college library\s*&\s*reading corner)$/i.test((item.title || '').trim()) &&
           !/(?:^|\/)flyer\.jpg(?:[?#]|$)/i.test(item.image_url || '')
@@ -785,7 +817,16 @@ function renderGallery() {
             !supersededTitles.has(item.title)
           ),
           ...suppliedPhotos
-        ];
+        ].filter(item => {
+          const title = (item.title || '').trim();
+          const imageUrl = item.image_url || '';
+          return !(
+            item.category === 'Sports' ||
+            /inter-house.*(?:athletics|sports)|(?:athletics|sports).*championships/i.test(title) ||
+            /computer\s*(?:laboratory|lab)|ict\s*practicals|mtlc\s*computer\s*laboratory/i.test(title) ||
+            /computer(?:[-\s]|%20)?lab/i.test(imageUrl)
+          );
+        });
         container.innerHTML = combinedItems.map((item, index) => `
           <div class="gallery-item revealed" data-category="${escapeHtml(item.category)}" data-index="${index}" data-src="${escapeHtml(item.image_url)}" data-title="${escapeHtml(item.title)}" data-desc="${escapeHtml(item.description)}">
             <img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)}" class="gallery-img" loading="lazy">

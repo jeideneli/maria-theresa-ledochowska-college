@@ -308,14 +308,6 @@ window.siteContent = {
   // 8. STUDENT LIFE (Co-curricular activities)
   studentLife: [
     {
-      id: "athletics",
-      title: "Inter-House Athletics & Team Sports",
-      icon: "trophy",
-      image: "assets/images/sports.jpg",
-      description: "Students take part in athletics and team sports, including football, netball, and volleyball. Inter-house activities give learners a positive setting to build fitness, practise discipline, learn the value of fair play, and work towards shared goals.",
-      highlights: "Three houses: Francisca, Anna Maria, and Tereza."
-    },
-    {
       id: "assembly",
       title: "Assemblies & College Community",
       icon: "compass",
@@ -390,13 +382,6 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
       image: "assets/images/Maria Theresa College Group Photo.png"
     },
     {
-      id: "gal-ict",
-      title: "Computer Laboratory & ICT Practicals",
-      category: "Academics",
-      description: "Students engaged in computer studies, typing, and digital research in the modern ICT laboratory suite.",
-      image: "assets/images/Focused Students in a Bright Computer Lab.png"
-    },
-    {
       id: "gal-sci-dsc",
       title: "Physics, Chemistry & Biology Practical Sessions",
       category: "Academics",
@@ -409,13 +394,6 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
       category: "Campus",
       description: "Civic education, seminar presentations, and student mentorship sessions.",
       image: "assets/images/DSC_1167.JPG"
-    },
-    {
-      id: "gal-sports",
-      title: "Inter-House Athletics & Sports Championships",
-      category: "Sports",
-      description: "Vibrant athletics and sports activities during inter-house championships in Lugazi.",
-      image: "assets/images/sports.jpg"
     },
     {
       id: "gal-assembly",
@@ -432,17 +410,10 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
       image: "assets/images/school actvities mdd.jpeg"
     },
     {
-      id: "gal-computer-room",
-      title: "MTLC Computer Laboratory",
-      category: "Academics",
-      description: "Computer workstations in the college ICT learning space.",
-      image: "assets/images/computer-lab.jpeg"
-    },
-    {
       id: "gal-support-rooms",
-      title: "Sick Bay and Skilling Room",
+      title: "School Way Path",
       category: "Campus",
-      description: "The college building housing student wellbeing and practical-skills spaces.",
+      description: "A covered school way path linking the campus buildings and providing safe access between key areas of the college.",
       image: "assets/images/sick-bay-and-skilling-room.jpeg"
     },
     {
@@ -594,9 +565,9 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
     },
     {
       id: "co-curricular",
-      title: "Vibrant Co-Curricular & Sports",
+      title: "Vibrant Co-Curricular Excellence",
       icon: "activity",
-      description: "Championship sports teams, music, dance and drama (MDD), debate, and community outreach clubs."
+      description: "Music, dance and drama (MDD), debate, leadership clubs, and community outreach initiatives."
     }
   ],
 
