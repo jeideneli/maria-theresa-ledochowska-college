@@ -305,31 +305,31 @@ window.siteContent = {
     ]
   },
 
-  // 8. STUDENT LIFE (Students Moving / Active Co-Curriculars)
+  // 8. STUDENT LIFE (Co-curricular activities)
   studentLife: [
     {
       id: "athletics",
-      title: "Inter-House Sports & Track Championships",
+      title: "Inter-House Athletics & Team Sports",
       icon: "trophy",
       image: "assets/images/sports.jpg",
-      description: "Robust athletic spirit with vibrant track and field competitions, football tournaments, netball leagues, and regional games.",
-      highlights: "Regional champions in Buikwe District Secondary Schools Athletics League."
+      description: "Students take part in athletics and team sports, including football, netball, and volleyball. Inter-house activities give learners a positive setting to build fitness, practise discipline, learn the value of fair play, and work towards shared goals.",
+      highlights: "Three houses: Francisca, Anna Maria, and Tereza."
     },
     {
       id: "assembly",
-      title: "Student Community Assembly & Campus Movement",
+      title: "Assemblies & College Community",
       icon: "compass",
       image: "assets/images/DSC_1170.JPG",
-      description: "Scholars actively moving across campus grounds for assemblies, values formation, spiritual fellowship, and peer mentorship.",
-      highlights: "Weekly college assembly, Christian values formation, and house meetings."
+      description: "Assemblies and house gatherings bring students together as a college community. These shared occasions support reflection, spiritual formation, communication, and a sense of belonging, while giving students opportunities to listen, participate, and support one another.",
+      highlights: "Shared college gatherings, Christian values, and house community."
     },
     {
       id: "drama-mdd",
       title: "Music, Dance & Drama (MDD) Performances",
       icon: "sparkles",
       image: "assets/images/school actvities mdd.jpeg",
-      description: "Dynamic theatrical motion, instrumental ensembles, dance routines, and expressive stage acting in the college auditorium.",
-      highlights: "Annual MDD festival, inter-class drama awards, and youth music recitals."
+      description: "Music, Dance and Drama gives students a platform to explore creative expression and celebrate Ugandan culture. Learners can contribute as performers or support the preparation and presentation of performances, developing confidence, collaboration, and appreciation of the arts.",
+      highlights: "The annual MDD festival brings Francisca, Anna Maria, and Tereza houses together."
     }
   ],
 
