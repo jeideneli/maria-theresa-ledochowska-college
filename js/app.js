@@ -649,7 +649,9 @@ function renderNews() {
           date: post.date_label,
           title: post.title,
           summary: post.summary,
-          image: post.image_url,
+          image: post.slug === 'student-leadership-induction'
+            ? 'assets/images/prefects photo.png'
+            : post.image_url,
           author: post.author,
           content: post.content
           }));
@@ -766,12 +768,26 @@ function renderGallery() {
         const normalizeLegacyGalleryTitle = item => {
           const title = (item.title || '').trim();
           const normalized = title.replace(/\s+/g, ' ');
-          if (/sick\s*bay|skilling\s*room/i.test(normalized)) {
+          const imageUrl = item.image_url || '';
+          if (/sick\s*bay|skilling\s*room/i.test(normalized) || /sick-bay-and-skilling-room/i.test(imageUrl)) {
             return {
               ...item,
-              title: 'School Way Path',
+              title: 'School Environment'
+            };
+          }
+          if (/^covered campus passage$/i.test(normalized)) {
+            return {
+              ...item,
+              title: 'School Environment',
               category: 'Campus',
-              description: 'A covered school way path linking the campus buildings and providing safe access between key areas of the college.'
+              description: 'Students learning, moving, and spending time around the college campus.',
+              image_url: 'assets/images/student-moving.jpg'
+            };
+          }
+          if (/^school environment$/i.test(normalized)) {
+            return {
+              ...item,
+              image_url: 'assets/images/student-moving.jpg'
             };
           }
           return item;
@@ -793,7 +809,7 @@ function renderGallery() {
         const visibleGalleryItems = galleryItemsWithNormalizedTitles.filter(item =>
           !isHiddenGalleryItem(item) &&
           !/prospectus|brochure/i.test(item.title || '') &&
-          !/^(?:covered campus passage|vocational tailoring\s*&\s*skilling workshop|science laboratory\s*&\s*practical chemistry|central college library\s*&\s*reading corner)$/i.test((item.title || '').trim()) &&
+          !/^(?:vocational tailoring\s*&\s*skilling workshop|science laboratory\s*&\s*practical chemistry|central college library\s*&\s*reading corner)$/i.test((item.title || '').trim()) &&
           !/(?:^|\/)flyer\.jpg(?:[?#]|$)/i.test(item.image_url || '')
         );
         if (!visibleGalleryItems.length) return;

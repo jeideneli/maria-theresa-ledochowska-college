@@ -364,7 +364,7 @@ Scholars performed traditional folk dances from across Uganda, staging impressiv
       date: "Campus Update",
       title: "Student Assembly & Campus Community",
       summary: "Students gather on campus for assembly, reflection, and shared community activities.",
-      image: "assets/images/DSC_1170.JPG",
+      image: "assets/images/prefects photo.png",
       author: "Dean of Students",
       content: `Maria Theresa Ledochowska College brings students together for assemblies and community activities on campus.
 
@@ -411,9 +411,9 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
     },
     {
       id: "gal-support-rooms",
-      title: "School Way Path",
+      title: "School Environment",
       category: "Campus",
-      description: "A covered school way path linking the campus buildings and providing safe access between key areas of the college.",
+      description: "Dedicated spaces supporting student wellbeing and practical skills development.",
       image: "assets/images/sick-bay-and-skilling-room.jpeg"
     },
     {

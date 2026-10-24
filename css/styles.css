@@ -1923,7 +1923,7 @@ a.btn:focus-visible {
 
 .what-drives-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 30px;
   align-items: stretch;
 }
@@ -2015,6 +2015,7 @@ a.btn:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
   display: block;
 }
 
