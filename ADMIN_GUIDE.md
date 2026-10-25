@@ -46,7 +46,7 @@ The website consists of **9 dedicated HTML pages**, linked seamlessly together w
 | **About Us** | [`about.html`](file:///d:/mtlc/about.html) | History & heritage in Lugazi, founding legacy, official mission, vision, 7 core values grid, board of governors & senior administrative leadership profiles, modern campus facilities overview. |
 | **Academics** | [`academics.html`](file:///d:/mtlc/academics.html) | UNEB curriculum overview (Center No. U2779), O-Level (UCE) subject tracks, A-Level (UACE) subject combinations (PCM, BCM, PCB, PEM, HEG, DEG, MEA, etc.), filterable academic departments, academic calendar, exam performance statistics. |
 | **Admissions** | [`admissions.html`](file:///d:/mtlc/admissions.html) | "Registration in Progress at the School Campus" announcement, 6-step admissions roadmap, S.1 / S.5 / Transfer eligibility criteria, fee structure guidelines, required documents checklist, intake deadlines, embedded interactive application form, and admissions FAQ. |
-| **Departments** | [`departments.html`](./departments.html) | Profiles of the Vocational Studies, Language, Sciences, and Humanities departments, including their subjects, learning focus, and supporting resources. |
+| **Departments** | [`departments.html`](./departments.html) | Profiles of Vocational Studies, Vocational Skills, Languages, Sciences, Humanities, and Religious Studies, including their subjects and learning focus. |
 | **Student Life** | [`students.html`](file:///d:/mtlc/students.html) | Student clubs and academic societies, sports disciplines and trophies, annual cultural gala, boarding house pastoral care, health & wellness center, and dining services. |
 | **Student Leadership** | [`campus/student-leadership.html`](./campus/student-leadership.html) | Student Council, class representatives, and student leadership responsibilities. |
 | **News & Events** | [`news.html`](file:///d:/mtlc/news.html) | Filterable announcements, press releases, term dates, school calendar highlights, academic competitions, sports events, and full-article modal reading reader. |
@@ -67,7 +67,7 @@ institution: {
   unebCenterNo: "U2779",
   fullUnebCenter: "UNEB CENTER NO. U2779",
   registrationNotice: "Registration in Progress at the School Campus",
-  established: "2004",
+  established: "2011",
   poBox: "P. O. Box 258, Lugazi",
   mission: "To provide quality all-round education, spiced by Christian values, to produce responsible and God-fearing citizens.",
   vision: "To be an academic giant in the country and produce citizens with positive impact in the transformation of society for peace and development.",
@@ -116,16 +116,15 @@ To add or update curriculum details shown on [`academics.html`](file:///d:/mtlc/
 
 ```javascript
 {
-  id: "sciences",
-  name: "Natural Sciences & Mathematics",
-  category: "Sciences",
-  tagline: "Pioneering scientific inquiry, discovery, and medical foundation.",
-  description: "...",
-  subjects: ["Physics", "Chemistry", "Biology", "Mathematics", "Agriculture"],
+  id: "languages",
+  name: "Languages Department",
+  category: "Languages Department",
+  tagline: "Building language, literacy, and communication.",
+  description: "Learners study Luganda, Kiswahili, English, and Literature.",
+  subjects: ["Luganda", "Kiswahili", "English", "Literature"],
   levels: ["O-Level (UCE)", "A-Level (UACE)"],
-  combinations: ["PCM/ICT", "PCB/Sub-Math", "BCM/ICT", "PEM/ICT"],
-  facilities: "3 modern science labs with digital Vernier sensors and fume hoods.",
-  icon: "flask"
+  facilities: "Library resources support reading and language learning.",
+  icon: "message-square"
 }
 ```
 
@@ -138,14 +137,17 @@ To update a department shown on [`departments.html`](./departments.html):
 
 ```javascript
 {
-  id: "dept-sciences",
-  name: "Sciences",
-  icon: "flask",
-  image: "assets/images/sciences 1.jpg",
-  headTitle: "Scientific Knowledge & Practical Skills",
-  subjects: ["Biology", "Chemistry", "Physics"],
-  description: "Develop scientific knowledge and practical skills through experiments and laboratory activities.",
-  labCount: "Well-stocked laboratory with equipment, apparatus, and materials"
+  id: "dept-vocational-skills",
+  name: "Vocational Skills",
+  icon: "scissors",
+  image: "assets/images/students-sewing.jpg",
+  headTitle: "Hands-on practical skills",
+  subjects: [
+    { name: "Tailoring", description: "Build practical garment-making skills." },
+    { name: "Shoe Making", description: "Learn practical footwear-making skills." }
+  ],
+  description: "Vocational skills give learners hands-on experience in tailoring and shoe making.",
+  labCount: "Practical training in tailoring and shoe making"
 }
 ```
 

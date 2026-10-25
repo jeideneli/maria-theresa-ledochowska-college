@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAdmissions();
   renderDepartments();
   renderStudentLife();
+  renderSpiritualGrowth();
   renderNews();
   renderGallery();
   renderTestimonials();
@@ -133,25 +134,86 @@ function initNavigation() {
 }
 
 function initCampusNavigation() {
-  const campusPages = [
-    { href: 'students.html', label: 'Student Life', icon: 'users', group: 'student-life' },
-    { href: 'campus/student-leadership.html', label: 'Student Leadership', icon: 'user-round-cog', group: 'student-life' },
-    { href: 'gallery.html', label: 'Photo Gallery', icon: 'images', group: 'student-life' },
-    { href: 'academics.html', label: 'Academics', icon: 'book-open', group: 'academics' },
-    { href: 'departments.html', label: 'Departments', icon: 'flask-conical', group: 'academics' },
-    { href: 'admissions.html', label: 'Admissions', icon: 'clipboard-list', group: 'quick-access' },
-    { href: 'news.html', label: 'News & Events', icon: 'newspaper', group: 'quick-access' }
+  const campusColumns = [
+    {
+      title: 'Nurturing',
+      groups: [{
+        id: 'nurturing',
+        links: [
+          { href: 'campus/spiritual-growth.html', label: 'Spiritual Growth', icon: 'cross' },
+          { href: 'students.html#mdd-champions-title', label: 'MDD', icon: 'music-2' },
+          { href: 'students.html#student-life-container', label: 'Sports & Games', icon: 'trophy' },
+          { href: 'campus/clubs-associations.html', label: 'Clubs & Associations', icon: 'users-round' }
+        ]
+      }]
+    },
+    {
+      title: 'Administration',
+      groups: [
+        {
+          id: 'administration',
+          links: [
+            { href: 'about.html#school-community', label: 'Leadership & Governance', icon: 'network' },
+            { href: 'campus/student-leadership.html', label: 'Student Leadership', icon: 'user-round-cog' }
+          ]
+        },
+        {
+          id: 'governance',
+          title: 'Governance',
+          links: [
+            { href: 'about.html#board-of-governors', label: 'Board of Governors', icon: 'gavel' },
+            { href: 'about.html#the-pta', label: 'The PTA', icon: 'handshake' }
+          ]
+        },
+        {
+          id: 'learning',
+          title: 'Learning',
+          links: [
+            { href: 'students.html', label: 'Students', icon: 'users' },
+            { href: 'academics.html', label: 'Academics', icon: 'book-open' },
+            { href: 'departments.html', label: 'Departments', icon: 'flask-conical' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Quick Access',
+      groups: [{
+        id: 'quick-access',
+        links: [
+          { href: 'gallery.html', label: 'Photo Gallery', icon: 'images' },
+          { href: 'news.html#term-dates-events', label: 'Events', icon: 'calendar-days' },
+          { href: 'news.html#news-grid-container', label: 'News & Events', icon: 'newspaper' },
+          { href: 'contact.html', label: 'Contact Us', icon: 'mail' }
+        ]
+      }]
+    }
   ];
+  const campusPages = campusColumns.flatMap(column => column.groups.flatMap(group =>
+    group.links.map(page => ({ ...page, group: group.id }))
+  ));
   const isCampusPage = window.location.pathname.includes('/campus/');
   const siteBase = new URL(isCampusPage ? '../' : './', window.location.href);
   const getPageUrl = page => new URL(page.href, siteBase);
+  const matchesPageUrl = (href, page) => {
+    const linkUrl = new URL(href, window.location.href);
+    const pageUrl = getPageUrl(page);
+    return linkUrl.pathname === pageUrl.pathname && linkUrl.hash === pageUrl.hash;
+  };
   const getPageLink = (nav, page) => Array.from(nav.querySelectorAll('a[href]'))
-    .find(link => new URL(link.getAttribute('href'), window.location.href).pathname === getPageUrl(page).pathname);
+    .find(link => matchesPageUrl(link.getAttribute('href'), page));
+  const removeStaleCampusLinks = nav => {
+    Array.from(nav.querySelectorAll('a[data-campus-page]')).forEach(link => {
+      const isCurrentCampusPage = campusPages.some(page => page.href === link.dataset.campusPage);
+      if (!isCurrentCampusPage) link.remove();
+    });
+  };
   const getPageHref = page => isCampusPage
     ? (page.href.startsWith('campus/') ? page.href.substring('campus/'.length) : `../${page.href}`)
     : page.href;
 
   const desktopNav = document.querySelector('.nav-links');
+  if (desktopNav) removeStaleCampusLinks(desktopNav);
   if (desktopNav && !desktopNav.querySelector('.campus-nav-item')) {
     const pageLinks = campusPages.map(page => getPageLink(desktopNav, page)).filter(Boolean);
 
@@ -172,23 +234,20 @@ function initCampusNavigation() {
       panel.id = 'campus-mega-menu';
       panel.setAttribute('aria-label', 'Campus pages');
       const featureImage = isCampusPage ? '../assets/images/school view.jpeg' : 'assets/images/school view.jpeg';
-      panel.innerHTML = `
-        <div class="campus-menu-feature">
+      panel.innerHTML = `<div class="campus-menu-feature">
           <img src="${featureImage}" alt="Maria Theresa Ledochowska College campus">
           <p>Discover learning, student life, and opportunities at MTLC Lugazi.</p>
-        </div>
-        <div class="campus-menu-column">
-          <h2>Student Life</h2>
-          <div class="campus-menu-links" data-campus-group="student-life"></div>
-        </div>
-        <div class="campus-menu-column">
-          <h2>Learning</h2>
-          <div class="campus-menu-links" data-campus-group="academics"></div>
-        </div>
-        <div class="campus-menu-column">
-          <h2>Quick Access</h2>
-          <div class="campus-menu-links" data-campus-group="quick-access"></div>
-        </div>`;
+        </div>${campusColumns.map(column => `
+          <div class="campus-menu-column">
+            <h2>${column.title}</h2>
+            ${column.groups.map(group => `
+              <div class="campus-menu-group">
+                ${group.title ? `<h3>${group.title}</h3>` : ''}
+                <div class="campus-menu-links" data-campus-group="${group.id}"></div>
+              </div>
+            `).join('')}
+          </div>
+        `).join('')}`;
 
       const insertionPoint = desktopNav.querySelector('a[href="about.html"]')
         || desktopNav.querySelector('a[href="../about.html"]')
@@ -234,6 +293,7 @@ function initCampusNavigation() {
   }
 
   const mobileNav = document.querySelector('.mobile-nav-links');
+  if (mobileNav) removeStaleCampusLinks(mobileNav);
   if (mobileNav && !mobileNav.querySelector('.mobile-campus-group')) {
     const pageLinks = campusPages.map(page => getPageLink(mobileNav, page)).filter(Boolean);
 
@@ -254,14 +314,30 @@ function initCampusNavigation() {
         group,
         mobileNav.querySelector('a[href="about.html"], a[href="../about.html"]') || pageLinks[0]
       );
-      campusPages.forEach(page => {
-        const link = getPageLink(mobileNav, page) || document.createElement('a');
-        link.href = getPageHref(page);
-        link.textContent = page.label;
-        link.setAttribute('data-campus-page', page.href);
-        link.classList.add('mobile-campus-submenu-link');
-        link.innerHTML = `<i data-lucide="${page.icon}" aria-hidden="true"></i><span>${page.label}</span>`;
-        submenu.appendChild(link);
+      campusColumns.forEach(column => {
+        const columnElement = document.createElement('div');
+        columnElement.className = 'mobile-campus-column';
+        columnElement.innerHTML = `<h2>${column.title}</h2>`;
+        column.groups.forEach(group => {
+          const groupElement = document.createElement('div');
+          groupElement.className = 'mobile-campus-subgroup';
+          if (group.title) {
+            const heading = document.createElement('h3');
+            heading.textContent = group.title;
+            groupElement.appendChild(heading);
+          }
+          group.links.forEach(page => {
+            const link = getPageLink(mobileNav, page) || document.createElement('a');
+            link.href = getPageHref(page);
+            link.textContent = page.label;
+            link.setAttribute('data-campus-page', page.href);
+            link.classList.add('mobile-campus-submenu-link');
+            link.innerHTML = `<i data-lucide="${page.icon}" aria-hidden="true"></i><span>${page.label}</span>`;
+            groupElement.appendChild(link);
+          });
+          columnElement.appendChild(groupElement);
+        });
+        submenu.appendChild(columnElement);
       });
 
       group.append(toggle, submenu);
@@ -572,6 +648,24 @@ function renderStudentLife() {
   `).join('');
 }
 
+function renderSpiritualGrowth() {
+  const container = document.getElementById('spiritual-growth-gallery');
+  if (!container) return;
+
+  const siteRoot = new URL(window.location.pathname.includes('/campus/') ? '../' : './', window.location.href);
+  container.innerHTML = (siteContent.spiritualGrowthPhotos || []).map((photo, index) => `
+    <article class="spiritual-photo-card reveal delay-${(index % 3) + 1}">
+      <img src="${escapeHtml(new URL(photo.image, siteRoot).href)}" alt="${escapeHtml(photo.title)}" loading="lazy">
+      <div class="spiritual-photo-copy">
+        <h3>${escapeHtml(photo.title)}</h3>
+        <p>${escapeHtml(photo.description)}</p>
+      </div>
+    </article>
+  `).join('');
+
+  initLucideIcons();
+}
+
 /* ==========================================================================
    8. NEWS & EVENTS SECTION
    ========================================================================== */
@@ -723,6 +817,8 @@ function renderGallery() {
 
   let items = Array.from(container.querySelectorAll('.gallery-item'));
   const tabs = tabsContainer ? Array.from(tabsContainer.querySelectorAll('.filter-tab')) : [];
+  const allPhotosTab = tabs.find(tab => tab.getAttribute('data-category') === 'All');
+  if (allPhotosTab) allPhotosTab.textContent = `All Photos (${items.length})`;
 
   // Filter tab click handling
   if (tabs.length > 0) {
@@ -799,6 +895,8 @@ function renderGallery() {
           const title = item.title || '';
           const imageUrl = item.image_url || '';
           return (
+            /(?:dedication[\s%20-]*day|general[\s%20-]*mass|prayer|religion(?:[\s%20-]*\d+)?)\.jpe?g(?:[?#]|$)/i.test(imageUrl) ||
+            /\b(?:dedication|mass|prayer|religious|religion|worship|faith)\b/i.test(title) ||
             item.category === 'Sports' ||
             /inter-house.*(?:athletics|sports)|(?:athletics|sports).*championships/i.test(title) ||
             /computer\s*(?:laboratory|lab)|ict\s*practicals|mtlc\s*computer\s*laboratory/i.test(title) ||
@@ -814,7 +912,7 @@ function renderGallery() {
         );
         if (!visibleGalleryItems.length) return;
         const suppliedPhotos = siteContent.gallery
-          .filter(item => /assets\/images\/(?:dedication day|general mass|library|prayer|religion(?: 2)?|school actvities mdd|school view upper)\.jpeg$/i.test(item.image))
+          .filter(item => /assets\/images\/(?:library|school actvities mdd|school view upper)\.jpeg$/i.test(item.image))
           .map(item => ({
             title: item.title,
             category: item.category,
@@ -852,7 +950,6 @@ function renderGallery() {
             </div>
           </div>
         `).join('');
-        const allPhotosTab = tabs.find(tab => tab.getAttribute('data-category') === 'All');
         if (allPhotosTab) allPhotosTab.textContent = `All Photos (${combinedItems.length})`;
         items = Array.from(container.querySelectorAll('.gallery-item'));
         attachLightboxTriggers();

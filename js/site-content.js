@@ -18,7 +18,7 @@ window.siteContent = {
     unebCenterNo: "U2779",
     fullUnebCenter: "UNEB CENTER NO. U2779",
     registrationNotice: "Registration in Progress at the School Campus",
-    established: "2004",
+    established: "2011",
     poBox: "P. O. Box 258, Lugazi",
     district: "Buikwe District",
     country: "Uganda",
@@ -36,7 +36,7 @@ window.siteContent = {
 
   // 2. CONTACT DETAILS & SOCIALS
   contact: {
-    addressLine1: "Along Kampala-Jinja Highway",
+    addressLine1: "Plot 140 Kampala-Jinja Road, Central Division, Nakazadde LCI",
     addressLine2: "P. O. Box 258, Lugazi, Uganda",
     location: "Lugazi Municipality, Buikwe District, Uganda",
     phonePrimary: "0392 946071",
@@ -65,7 +65,7 @@ window.siteContent = {
 
   // 3. STATISTICAL ACHIEVEMENTS (Animated Counters)
   statistics: [
-    { label: "Years of Excellence", value: 22, suffix: "+", icon: "award" },
+    { label: "Years of Excellence", value: 10, suffix: "+", icon: "award" },
     { label: "Students Enrolled", value: 1250, suffix: "+", icon: "users" },
     { label: "Qualified Educators", value: 68, suffix: "+", icon: "graduation-cap" },
     { label: "Academic Programs & Labs", value: 16, suffix: "+", icon: "book-open" },
@@ -122,51 +122,75 @@ window.siteContent = {
   academicPrograms: [
     {
       id: "vocational",
-      name: "Vocational Studies",
-      category: "Vocational Studies",
+      name: "Vocational Studies Department",
+      category: "Vocational Studies Department",
       icon: "wrench",
       image: "assets/images/students-sewing.jpg",
-      tagline: "Practical skills for self-employment, entrepreneurship, and future careers.",
-      description: "Learners develop practical skills in shoemaking and tailoring. Computers support digital learning, computer skills, and practical training, helping learners prepare for self-employment, entrepreneurship, and future employment.",
-      subjects: ["Shoemaking", "Tailoring", "Computer Skills", "Digital Learning"],
+      tagline: "Applied learning across practical and creative subjects.",
+      description: "The department brings together agriculture, physical education, art and design, entrepreneurship, and information and communication technology.",
+      subjects: ["Agriculture", "Physical Education", "Art & Design", "Entrepreneurship", "Information & Communication Technology (ICT)"],
       levels: ["O-Level (UCE)", "Practical Skills Training"],
-      facilities: "Computers to support digital learning and practical training."
+      facilities: "Learning through practical, creative, and digital subjects."
     },
     {
-      id: "language",
-      name: "Language",
-      category: "Language",
+      id: "vocational-skills",
+      name: "Vocational Skills",
+      category: "Vocational Skills",
+      icon: "scissors",
+      image: "assets/images/students-sewing.jpg",
+      tagline: "Hands-on skills for making and self-reliance.",
+      description: "Learners develop practical skills in tailoring and shoe making.",
+      subjects: ["Tailoring", "Shoe Making"],
+      levels: ["O-Level (UCE)", "Practical Skills Training"],
+      facilities: "Practical training in tailoring and shoe making."
+    },
+    {
+      id: "languages",
+      name: "Languages Department",
+      category: "Languages Department",
       icon: "message-square",
       image: "assets/images/library.jpeg",
-      tagline: "Building confident communication in speech and writing.",
-      description: "Learners develop essential written and spoken communication skills. A well-stocked library with textbooks, dictionaries, novels, reference materials, and other reading resources supports vocabulary, reading culture, comprehension, and communication.",
-      subjects: ["Written Communication", "Spoken Communication", "Reading", "Comprehension"],
+      tagline: "Building language, literacy, and communication.",
+      description: "Learners study Luganda, Kiswahili, English, and Literature.",
+      subjects: ["Luganda", "Kiswahili", "English", "Literature"],
       levels: ["O-Level (UCE)", "A-Level (UACE)"],
-      facilities: "A well-stocked library with textbooks, dictionaries, novels, and reference materials."
+      facilities: "Library resources support reading and language learning."
     },
     {
       id: "sciences",
-      name: "Sciences",
-      category: "Sciences",
+      name: "Sciences Department",
+      category: "Sciences Department",
       icon: "flask",
       image: "assets/images/sciences 1.jpg",
-      tagline: "Scientific knowledge and practical investigation through experiments.",
-      description: "Biology, Chemistry, and Physics lessons combine scientific knowledge with practical activities. Learners use laboratory equipment, apparatus, and materials to conduct experiments and develop scientific inquiry, critical thinking, and problem-solving skills.",
-      subjects: ["Biology", "Chemistry", "Physics", "Scientific Inquiry"],
+      tagline: "Scientific learning, investigation, and numeracy.",
+      description: "The department includes Physics, Chemistry, Biology, and Mathematics.",
+      subjects: ["Physics", "Chemistry", "Biology", "Mathematics"],
       levels: ["O-Level (UCE)", "A-Level (UACE)"],
-      facilities: "A well-stocked laboratory with equipment, apparatus, and materials for experiments."
+      facilities: "Laboratory resources support practical science learning."
     },
     {
       id: "humanities",
-      name: "Humanities",
-      category: "Humanities",
+      name: "Humanities Department",
+      category: "Humanities Department",
       icon: "globe",
       image: "assets/images/geograpy.jpg",
-      tagline: "Understanding society, culture, history, and the environment.",
-      description: "History, Geography, Religious Education, and related social sciences help learners understand human society and relationships. Learners build critical thinking, analytical, decision-making, and problem-solving skills, while developing good citizenship, respect for cultures, moral values, and awareness of social and economic issues.",
-      subjects: ["History", "Geography", "Religious Education", "Social Sciences"],
+      tagline: "Understanding people, places, and society.",
+      description: "The department includes History and Geography.",
+      subjects: ["History", "Geography"],
       levels: ["O-Level (UCE)", "A-Level (UACE)"],
-      facilities: "Learning resources for the study of society, culture, history, and the environment."
+      facilities: "Learning resources support the study of people and places."
+    },
+    {
+      id: "religious-studies",
+      name: "Religious Studies Department",
+      category: "Religious Studies Department",
+      icon: "cross",
+      image: "assets/images/religion.jpeg",
+      tagline: "Faith, values, and responsible living.",
+      description: "Learners study CRE as part of their religious studies.",
+      subjects: ["CRE"],
+      levels: ["O-Level (UCE)", "A-Level (UACE)"],
+      facilities: "Religious studies support reflection and character formation."
     }
   ],
 
@@ -174,62 +198,87 @@ window.siteContent = {
   departments: [
     {
       id: "dept-vocational",
-      name: "Vocational Studies",
+      name: "Vocational Studies Department",
       icon: "wrench",
       image: "assets/images/students-sewing.jpg",
-      headTitle: "Digital literacy, design & practical trades",
+      headTitle: "Applied, creative & digital subjects",
       subjects: [
-        { name: "Computer Studies", description: "Build digital literacy through computer use, essential software, and responsible technology skills for learning and work." },
-        { name: "Tailoring", description: "Develop garment-making skills through fabric selection, measuring, pattern work, sewing, finishing, and simple clothing repairs." },
-        { name: "Shoemaking", description: "Learn the foundations of footwear design and construction, material use, assembly, and basic repair." }
+        { name: "Agriculture", description: "Explore agriculture and its practical applications." },
+        { name: "Physical Education", description: "Develop fitness, coordination, and teamwork." },
+        { name: "Art & Design", description: "Explore visual creativity and design." },
+        { name: "Entrepreneurship", description: "Build enterprise awareness and problem-solving skills." },
+        { name: "Information & Communication Technology (ICT)", description: "Develop digital literacy and computer skills." }
       ],
-      description: "Vocational Studies connects classroom learning with practical, transferable skills. Learners are introduced to digital tools and hands-on trades that can support further training, self-reliance, and future employment.",
-      labCount: "Practical training in computer skills, tailoring, and shoemaking"
+      description: "The department groups applied, creative, enterprise, and information technology subjects.",
+      labCount: "Learning through practical, creative, and digital subjects"
     },
     {
-      id: "dept-language",
-      name: "Languages",
+      id: "dept-vocational-skills",
+      name: "Vocational Skills",
+      icon: "scissors",
+      image: "assets/images/students-sewing.jpg",
+      headTitle: "Hands-on practical skills",
+      subjects: [
+        { name: "Tailoring", description: "Build practical garment-making skills." },
+        { name: "Shoe Making", description: "Learn practical footwear-making skills." }
+      ],
+      description: "Vocational skills give learners hands-on experience in tailoring and shoe making.",
+      labCount: "Practical training in tailoring and shoe making"
+    },
+    {
+      id: "dept-languages",
+      name: "Languages Department",
       icon: "book-open",
       image: "assets/images/library.jpeg",
       headTitle: "Communication, literacy & literature",
       subjects: [
-        { name: "English Language", description: "Develop confident spoken and written English for classroom learning, communication, and everyday life." },
-        { name: "Reading", description: "Build fluency, vocabulary, comprehension, and the habits needed to learn from a wide range of texts." },
-        { name: "Writing", description: "Practice clear, accurate writing, from sentence construction and composition to organised academic responses." },
-        { name: "Literature", description: "Explore stories, poetry, and drama to develop interpretation, imagination, appreciation, and thoughtful expression." }
+        { name: "Luganda", description: "Develop Luganda language and communication skills." },
+        { name: "Kiswahili", description: "Develop Kiswahili language and communication skills." },
+        { name: "English", description: "Build confident spoken and written communication." },
+        { name: "Literature", description: "Explore literary works and interpretation." }
       ],
-      description: "The Languages department helps learners express ideas clearly and understand the written word. Reading and writing practice are strengthened through engagement with literature and the school's library resources.",
+      description: "The Languages department develops language, literacy, and communication skills.",
       labCount: "Library resources include textbooks, dictionaries, novels, and reference materials"
     },
     {
       id: "dept-sciences",
-      name: "Sciences",
+      name: "Sciences Department",
       icon: "flask",
       image: "assets/images/sciences 1.jpg",
       headTitle: "Scientific understanding, mathematics & inquiry",
       subjects: [
-        { name: "Biology", description: "Study living organisms, human and plant life, health, and the relationships between organisms and their environments." },
-        { name: "Physics", description: "Explore forces, energy, matter, and physical systems through explanation, problem-solving, and practical investigation." },
-        { name: "Mathematics", description: "Strengthen numeracy, logical reasoning, quantitative analysis, and the mathematical tools used across disciplines." },
-        { name: "Chemistry", description: "Understand substances, their properties, and how they change through chemical reactions and practical study." }
+        { name: "Physics", description: "Study the physical world through scientific thinking." },
+        { name: "Chemistry", description: "Explore matter, reactions, and scientific investigation." },
+        { name: "Biology", description: "Understand life and the living world." },
+        { name: "Mathematics", description: "Develop numeracy, logic, and problem-solving." }
       ],
-      description: "The Sciences department develops curiosity and evidence-based thinking. Learners build core scientific knowledge and mathematical reasoning, supported by practical activities and laboratory investigation.",
-      labCount: "Laboratory activities use available equipment, apparatus, and learning materials"
+      description: "The Sciences department develops scientific understanding and mathematical reasoning.",
+      labCount: "Laboratory resources support practical science learning"
     },
     {
       id: "dept-humanities",
-      name: "Humanities",
+      name: "Humanities Department",
       icon: "globe",
       image: "assets/images/geograpy.jpg",
       headTitle: "People, places, belief & society",
       subjects: [
-        { name: "History", description: "Examine people, events, and ideas from the past to understand how societies change and how the past shapes the present." },
-        { name: "Geography", description: "Explore places, environments, people, and the connections between communities and the world around them." },
-        { name: "Religious Education", description: "Consider religious beliefs, values, and moral questions while developing reflection, respect, and responsible choices." },
-        { name: "Social Sciences", description: "Build understanding of communities, social relationships, citizenship, and the issues that affect people's lives." }
+        { name: "History", description: "Learn from events and experiences that shaped society." },
+        { name: "Geography", description: "Understand people, places, environments, and society." }
       ],
-      description: "The Humanities department helps learners make sense of people, places, cultures, beliefs, and society. Study encourages informed discussion, analytical thinking, respect for different perspectives, and responsible citizenship.",
-      labCount: "Learning resources support the study of society, culture, history, and the environment"
+      description: "The Humanities department studies people, places, history, and society.",
+      labCount: "Learning resources support the study of people and places"
+    },
+    {
+      id: "dept-religious-studies",
+      name: "Religious Studies Department",
+      icon: "cross",
+      image: "assets/images/religion.jpeg",
+      headTitle: "Faith, values & responsible living",
+      subjects: [
+        { name: "CRE", description: "Grow in faith, conscience, and responsible living." }
+      ],
+      description: "Religious Studies supports reflection, faith, and character formation through CRE.",
+      labCount: "Learning supports reflection and character formation"
     }
   ],
 
@@ -429,41 +478,49 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
       category: "Campus",
       description: "Students walking through the college compound with campus buildings in the background.",
       image: "assets/images/school view upper.jpeg"
-    },
+    }
+  ],
+
+  spiritualGrowthPhotos: [
     {
-      id: "gal-dedication",
       title: "School Dedication Day",
-      category: "Events",
       description: "The school community gathers in faith for a special dedication celebration.",
       image: "assets/images/dedication day.jpeg"
     },
     {
-      id: "gal-general-mass",
       title: "School Community at General Mass",
-      category: "Events",
-      description: "Students, staff, and guests join together for the school community's general Mass.",
+      description: "Students and staff gather for the school community's general Mass.",
       image: "assets/images/general mass.jpeg"
     },
     {
-      id: "gal-prayer",
       title: "Student Prayer and Reflection",
-      category: "Events",
       description: "A student leads the school community in prayer and reflection.",
       image: "assets/images/prayer.jpeg"
     },
     {
-      id: "gal-religion",
       title: "Religious Education and Service",
-      category: "Students",
-      description: "Students take part in religious education and service as part of the school's faith formation.",
+      description: "Students take part in religious education and service as part of their faith formation.",
       image: "assets/images/religion.jpeg"
     },
     {
-      id: "gal-religion-2",
       title: "Student Faith Community",
-      category: "Students",
       description: "Students participate in the school's faith community and religious life.",
       image: "assets/images/religion 2.jpeg"
+    },
+    {
+      title: "Students at the School Dedication",
+      description: "Students gather for a school dedication celebration.",
+      image: "assets/images/religion 3.jpeg"
+    },
+    {
+      title: "Students in Worship and Song",
+      description: "Students join together in song during a faith gathering.",
+      image: "assets/images/religion 4.jpeg"
+    },
+    {
+      title: "School Community at Mass",
+      description: "Students and clergy gather for a school Mass.",
+      image: "assets/images/religion 5.jpeg"
     }
   ],
 
@@ -623,7 +680,7 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
     },
     {
       question: "Where is Maria Theresa Ledochowska College located?",
-      answer: "The college is located in Lugazi Municipality, Buikwe District, Uganda along the Kampala-Jinja Highway. Our postal address is P. O. Box 258, Lugazi."
+      answer: "The college is located at Plot 140 Kampala-Jinja Road, Central Division, Lugazi Municipality, Nakazadde LCI. Our postal address is P. O. Box 258, Lugazi."
     },
     {
       question: "What is the core mission and foundation of MTLC Lugazi?",
