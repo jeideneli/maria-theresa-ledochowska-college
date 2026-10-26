@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderDepartments();
   renderStudentLife();
   renderSpiritualGrowth();
+  renderHomeFaithPhotos();
   renderNews();
   renderGallery();
   renderTestimonials();
@@ -664,6 +665,29 @@ function renderSpiritualGrowth() {
   `).join('');
 
   initLucideIcons();
+}
+
+function renderHomeFaithPhotos() {
+  const gallery = document.getElementById('home-faith-gallery');
+  const track = gallery?.querySelector('.home-faith-track');
+  if (!gallery || !track) return;
+
+  const photos = siteContent.spiritualGrowthPhotos || [];
+  if (!photos.length) return;
+
+  const siteRoot = new URL('./', window.location.href);
+  const renderPhotoGroup = (isDuplicate) => `
+    <div class="home-faith-photo-group"${isDuplicate ? ' aria-hidden="true"' : ''}>
+      ${photos.map((photo) => `
+        <figure class="home-faith-photo">
+          <img src="${escapeHtml(new URL(photo.image, siteRoot).href)}" alt="${isDuplicate ? '' : escapeHtml(photo.title)}" loading="lazy">
+          ${isDuplicate ? '' : `<figcaption>${escapeHtml(photo.title)}</figcaption>`}
+        </figure>
+      `).join('')}
+    </div>
+  `;
+
+  track.innerHTML = `${renderPhotoGroup(false)}${renderPhotoGroup(true)}`;
 }
 
 /* ==========================================================================
