@@ -190,7 +190,7 @@ values
   ('registration-in-progress', 'Admissions', 'Active Intake',
    'Registration in Progress at the School Campus — UNEB Center No. U2779',
    'Scholars arrive and move across campus as admissions and registration are underway for Senior One, Senior Five, and continuing transfer students.',
-   'assets/images/Maria Theresa College Group Photo.png', 'Office of the Admissions Registrar',
+   'assets/images/chemistry prac.jpeg', 'Office of the Admissions Registrar',
    'Maria Theresa Ledochowska College – Lugazi announces that registration is currently in progress at the school campus for both O-Level (S.1 - S.4) and A-Level (S.5 - S.6).' || E'\n\n' ||
    'As an accredited UNEB Center (Center No. U2779), MTLC Lugazi is committed to providing quality all-round education, spiced by Christian values, to produce responsible and God-fearing citizens.' || E'\n\n' ||
    'Parents and guardians are cordially invited to visit the school campus in Lugazi (P. O. Box 258, Lugazi) to secure admission vacancies.' || E'\n\n' ||
@@ -220,6 +220,10 @@ set title = 'Student Assembly & Campus Community',
       'These gatherings support fellowship, reflection, shared responsibility, and the college motto, Learning Today... Leading Tomorrow.'
 where slug = 'student-leadership-induction';
 
+update public.news_posts
+set image_url = 'assets/images/chemistry prac.jpeg'
+where slug = 'registration-in-progress';
+
 update public.gallery_items
 set image_url = 'assets/images/student-moving.jpg'
 where title in ('Covered Campus Passage', 'School Environment');
@@ -243,8 +247,8 @@ where title = 'Covered Campus Passage'
 
 insert into public.gallery_items (title, category, description, image_url, sort_order, published)
 values
-  ('Science Laboratory & Practical Chemistry', 'Academics', 'Students conducting chemistry and biology practical investigations in the modern science laboratory.', 'assets/images/sciences 1.jpg', 1, true),
-  ('College Student Body & Uniform Assembly', 'Students', 'Scholars of Maria Theresa Ledochowska College in neat royal blue school uniforms on campus parade.', 'assets/images/Maria Theresa College Group Photo.png', 2, true),
+  ('Science Laboratory & Practical Chemistry', 'Academics', 'Chemistry laboratory equipment prepared for practical learning.', 'assets/images/chemistry prac.jpeg', 1, true),
+  ('College Student Body & Uniform Assembly', 'Academics', 'Chemistry laboratory equipment prepared for practical learning.', 'assets/images/chemistry prac.jpeg', 2, true),
   ('Central College Library & Reading Corner', 'Academics', 'Focused study and reference work in the collegiate library surrounded by extensive book collections.', 'assets/images/Bright School Library Reading Corner.png', 4, true),
   ('Vocational Tailoring & Skilling Workshop', 'Campus', 'Hands-on vocational skilling and garment construction in our well-equipped tailoring training suite.', 'assets/images/Bright African Sewing Class Workshop.png', 5, true),
   ('Physics, Chemistry & Biology Practical Sessions', 'Academics', 'Science practical sessions and experimental investigations guided by science educators.', 'assets/images/DSC_1161.JPG', 6, true),
@@ -256,6 +260,17 @@ values
   ('College Reading Room', 'Academics', 'Bookshelves and study space in the college reading room.', 'assets/images/reading room.jpeg', 15, true),
   ('Students in the College Compound', 'Campus', 'Students walking through the college compound with campus buildings in the background.', 'assets/images/students-in-the-compound.jpeg', 16, true)
 on conflict (title) do nothing;
+
+update public.gallery_items
+set category = 'Academics',
+    description = 'Chemistry laboratory equipment prepared for practical learning.',
+    image_url = 'assets/images/chemistry prac.jpeg'
+where title = 'College Student Body & Uniform Assembly';
+
+update public.gallery_items
+set image_url = 'assets/images/chemistry prac.jpeg',
+    description = 'Chemistry laboratory equipment prepared for practical learning.'
+where title = 'Science Laboratory & Practical Chemistry';
 
 -- After creating the first administrator through Supabase Auth, grant admin
 -- access by replacing the UUID below with that user's Auth ID:

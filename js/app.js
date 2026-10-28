@@ -154,7 +154,7 @@ function initCampusNavigation() {
         {
           id: 'administration',
           links: [
-            { href: 'about.html#school-community', label: 'Leadership & Governance', icon: 'network' },
+            { href: 'campus/leadership-governance.html', label: 'Leadership & Governance', icon: 'network' },
             { href: 'campus/student-leadership.html', label: 'Student Leadership', icon: 'user-round-cog' }
           ]
         },
@@ -162,8 +162,7 @@ function initCampusNavigation() {
           id: 'governance',
           title: 'Governance',
           links: [
-            { href: 'about.html#board-of-governors', label: 'Board of Governors', icon: 'gavel' },
-            { href: 'about.html#the-pta', label: 'The PTA', icon: 'handshake' }
+            { href: 'campus/leadership-governance.html#the-pta', label: 'The PTA', icon: 'handshake' }
           ]
         },
         {
@@ -234,9 +233,9 @@ function initCampusNavigation() {
       panel.className = 'campus-mega-menu';
       panel.id = 'campus-mega-menu';
       panel.setAttribute('aria-label', 'Campus pages');
-      const featureImage = isCampusPage ? '../assets/images/school view.jpeg' : 'assets/images/school view.jpeg';
+      const featureImage = isCampusPage ? '../assets/images/chemistry prac.jpeg' : 'assets/images/chemistry prac.jpeg';
       panel.innerHTML = `<div class="campus-menu-feature">
-          <img src="${featureImage}" alt="Maria Theresa Ledochowska College campus">
+          <img src="${featureImage}" alt="Chemistry laboratory glassware and a pipette prepared for a practical">
           <p>Discover learning, student life, and opportunities at MTLC Lugazi.</p>
         </div>${campusColumns.map(column => `
           <div class="campus-menu-column">
@@ -767,9 +766,11 @@ function renderNews() {
           date: post.date_label,
           title: post.title,
           summary: post.summary,
-          image: post.slug === 'student-leadership-induction'
-            ? 'assets/images/prefects photo.png'
-            : post.image_url,
+          image: post.slug === 'registration-in-progress'
+            ? 'assets/images/students.JPG'
+            : post.slug === 'student-leadership-induction'
+              ? 'assets/images/prefects photo.png'
+              : post.image_url,
           author: post.author,
           content: post.content
           }));
@@ -935,8 +936,12 @@ function renderGallery() {
           !/(?:^|\/)flyer\.jpg(?:[?#]|$)/i.test(item.image_url || '')
         );
         if (!visibleGalleryItems.length) return;
+        const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
         const suppliedPhotos = siteContent.gallery
-          .filter(item => /assets\/images\/(?:library|school actvities mdd|school view upper)\.jpeg$/i.test(item.image))
+          .filter(item =>
+            /assets\/images\/(?:library|school actvities mdd|chemistry prac)\.jpeg$/i.test(item.image) ||
+            (!isHomePage && /assets\/images\/(?:socialization\.jpeg|A level\.jpeg)$/i.test(item.image))
+          )
           .map(item => ({
             title: item.title,
             category: item.category,
@@ -946,6 +951,7 @@ function renderGallery() {
         const suppliedPhotoPaths = new Set(suppliedPhotos.map(item => item.image_url));
         const supersededTitles = new Set([
           "Cultural Gala, MDD & School Celebrations",
+          "College Student Body & Uniform Assembly",
           "College Reading Room",
           "Students in the College Compound"
         ]);
@@ -965,7 +971,17 @@ function renderGallery() {
             /computer(?:[-\s]|%20)?lab/i.test(imageUrl)
           );
         });
-        container.innerHTML = combinedItems.map((item, index) => `
+        const seenHomePageImages = new Set();
+        const galleryItemsToRender = isHomePage
+          ? combinedItems.filter(item => {
+            const imageUrl = new URL(item.image_url, window.location.href);
+            const imageKey = `${imageUrl.origin}${imageUrl.pathname.toLowerCase().replace(/%20/g, ' ')}`;
+            if (seenHomePageImages.has(imageKey)) return false;
+            seenHomePageImages.add(imageKey);
+            return true;
+          })
+          : combinedItems;
+        container.innerHTML = galleryItemsToRender.map((item, index) => `
           <div class="gallery-item revealed" data-category="${escapeHtml(item.category)}" data-index="${index}" data-src="${escapeHtml(item.image_url)}" data-title="${escapeHtml(item.title)}" data-desc="${escapeHtml(item.description)}">
             <img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)}" class="gallery-img" loading="lazy">
             <div class="gallery-overlay">
@@ -974,7 +990,7 @@ function renderGallery() {
             </div>
           </div>
         `).join('');
-        if (allPhotosTab) allPhotosTab.textContent = `All Photos (${combinedItems.length})`;
+        if (allPhotosTab) allPhotosTab.textContent = `All Photos (${galleryItemsToRender.length})`;
         items = Array.from(container.querySelectorAll('.gallery-item'));
         attachLightboxTriggers();
       })
@@ -1726,7 +1742,7 @@ function renderUnebResults() {
       <!-- Campus Photo Honors Banner with Real School Community -->
       <div class="uneb-photo-banner reveal delay-3">
         <div class="uneb-banner-media">
-          <img src="assets/images/Maria Theresa College Group Photo.png" alt="Maria Theresa Ledochowska College Student Body in Royal Blue Uniform" class="uneb-banner-img" loading="lazy">
+          <img src="assets/images/chemistry prac.jpeg" alt="Chemistry laboratory glassware prepared for practical learning" class="uneb-banner-img" loading="lazy">
           <div class="uneb-banner-overlay"></div>
         </div>
         <div class="uneb-banner-content">
@@ -1734,8 +1750,8 @@ function renderUnebResults() {
             <i data-lucide="check-circle" style="width: 15px; height: 15px; color: var(--gold-400);"></i>
             <span>UNEB Center U2779 Admissions Active</span>
           </div>
-          <h4 class="uneb-banner-title">“Entrust your Child with us today and you will not regret.”</h4>
-          <p class="uneb-banner-desc">Providing quality all-round education, spiced by Christian values, to produce responsible and God-fearing citizens. Registration in progress at school campus.</p>
+          <h4 class="uneb-banner-title">“Entrust your child to us today, and you will not regret it.”</h4>
+          <p class="uneb-banner-desc">We provide a high-quality, all-round education grounded in Christian values and nurture responsible, God-fearing citizens. Registration is in progress at the school campus.</p>
           <div class="uneb-banner-actions">
             <button class="btn btn-gold open-apply-modal">
               Apply for S.1 / S.5 Admission

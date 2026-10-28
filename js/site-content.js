@@ -17,7 +17,7 @@ window.siteContent = {
     motto: "Learning Today... Leading Tomorrow",
     unebCenterNo: "U2779",
     fullUnebCenter: "UNEB CENTER NO. U2779",
-    registrationNotice: "Registration in Progress at the School Campus",
+    registrationNotice: "Registration is in progress at the school campus.",
     established: "2011",
     poBox: "P. O. Box 258, Lugazi",
     district: "Buikwe District",
@@ -29,14 +29,14 @@ window.siteContent = {
       "LEADERSHIP",
       "INNOVATION"
     ],
-    mission: "To provide quality all-round education, spiced by Christian values, to produce responsible and God-fearing citizens.",
-    vision: "To be an academic giant in the country and produce citizens with positive impact in the transformation of society for peace and development.",
-    statement: "To provide quality all-round education, spiced by Christian values, to produce responsible and God-fearing citizens."
+    mission: "To provide a high-quality, all-round education grounded in Christian values and nurture responsible, God-fearing citizens.",
+    vision: "To be a leading academic institution in Uganda and to develop citizens who contribute positively to society, promoting peace and development.",
+    statement: "To provide a high-quality, all-round education grounded in Christian values and nurture responsible, God-fearing citizens."
   },
 
   // 2. CONTACT DETAILS & SOCIALS
   contact: {
-    addressLine1: "Plot 140 Kampala-Jinja Road, Central Division, Nakazadde LCI",
+    addressLine1: "Plot 140, Kampala–Jinja Road, Central Division, Nakazadde LCI",
     addressLine2: "P. O. Box 258, Lugazi, Uganda",
     location: "Lugazi Municipality, Buikwe District, Uganda",
     phonePrimary: "0392 946071",
@@ -48,7 +48,7 @@ window.siteContent = {
     emailAdmissions: "mariatheresalego@gmail.com",
     emailGeneral: "mariatheresalego@gmail.com",
     emailPrincipal: "mariatheresalego@gmail.com",
-    officeHours: "Monday – Friday: 8:00 AM – 5:00 PM | Saturday: 9:00 AM – 1:00 PM (EAT)",
+    officeHours: "Monday to Friday: 8:00 a.m. to 5:00 p.m. | Saturday: 9:00 a.m. to 1:00 p.m. (EAT)",
     mapCoordinates: {
       lat: 0.3774,
       lng: 32.9377,
@@ -68,7 +68,7 @@ window.siteContent = {
     { label: "Years of Excellence", value: 10, suffix: "+", icon: "award" },
     { label: "Students Enrolled", value: 1250, suffix: "+", icon: "users" },
     { label: "Qualified Educators", value: 68, suffix: "+", icon: "graduation-cap" },
-    { label: "Academic Programs & Labs", value: 16, suffix: "+", icon: "book-open" },
+    { label: "Academic Programmes & Labs", value: 16, suffix: "+", icon: "book-open" },
     { label: "University Transition Rate", value: 98, suffix: "%", icon: "trending-up" }
   ],
 
@@ -78,7 +78,7 @@ window.siteContent = {
       id: "excellence",
       title: "Academic Excellence",
       icon: "trophy",
-      description: "Fostering unyielding commitment to scholarly rigor, creative thinking, and outstanding national UNEB (Center U2779) examination results."
+      description: "Fostering a strong commitment to academic rigour, creative thinking, and excellent results in national UNEB examinations (Centre No. U2779)."
     },
     {
       id: "integrity",
@@ -108,13 +108,13 @@ window.siteContent = {
       id: "respect",
       title: "Mutual Respect",
       icon: "heart-handshake",
-      description: "Embracing cultural diversity, mutual tolerance, and upholding human dignity across our collegiate family."
+      description: "Embracing cultural diversity, practising mutual tolerance, and upholding human dignity within our college community."
     },
     {
       id: "service",
       title: "Community Service",
       icon: "hand-heart",
-      description: "Impacting our local Lugazi community through literacy outreaches, environmental conservation, and social responsibility."
+      description: "Supporting the Lugazi community through literacy outreach programmes, environmental conservation, and social responsibility."
     }
   ],
 
@@ -161,7 +161,7 @@ window.siteContent = {
       name: "Sciences Department",
       category: "Sciences Department",
       icon: "flask",
-      image: "assets/images/sciences 1.jpg",
+      image: "assets/images/chemistry prac.jpeg",
       tagline: "Scientific learning, investigation, and numeracy.",
       description: "The department includes Physics, Chemistry, Biology, and Mathematics.",
       subjects: ["Physics", "Chemistry", "Biology", "Mathematics"],
@@ -244,7 +244,7 @@ window.siteContent = {
       id: "dept-sciences",
       name: "Sciences Department",
       icon: "flask",
-      image: "assets/images/sciences 1.jpg",
+      image: "assets/images/chemistry prac.jpeg",
       headTitle: "Scientific understanding, mathematics & inquiry",
       subjects: [
         { name: "Physics", description: "Study the physical world through scientific thinking." },
@@ -285,19 +285,19 @@ window.siteContent = {
   // 7. ADMISSIONS DETAILS
   admissions: {
     heroTitle: "Join the Legacy of Academic Excellence",
-    subtitle: "Registration is in progress at the school campus. We welcome motivated young scholars seeking quality and all-round education.",
+    subtitle: "Registration is in progress at the school campus. We welcome motivated learners seeking a high-quality, all-round education.",
     unebCenterBadge: "UNEB CENTER NO. U2779",
-    statusBadge: "Registration in Progress at the School Campus",
+    statusBadge: "Registration is in progress at the school campus",
     steps: [
       {
         step: "01",
         title: "Enquire",
-        description: "Visit our campus in Lugazi, call 0392 946071 / +256 (0) 772 450 925, or email mariatheresalego@gmail.com for entry guidelines."
+        description: "Visit our campus in Lugazi, call 0392 946071 or +256 (0) 772 450 925, or email mariatheresalego@gmail.com for entry guidelines."
       },
       {
         step: "02",
-        title: "Obtain Application Form",
-        description: "Collect an official admission form directly at the School Campus or apply online through this portal."
+        title: "Obtain an Application Form",
+        description: "Collect an official admission form directly from the school campus or apply online through this portal."
       },
       {
         step: "03",
@@ -312,31 +312,31 @@ window.siteContent = {
       {
         step: "05",
         title: "Admission Confirmation",
-        description: "Successful candidates receive an official Admission Letter with fee structure and requirements checklist."
+        description: "Successful candidates receive an official admission letter with the fee structure and a requirements checklist."
       },
       {
         step: "06",
         title: "Reporting & Induction",
-        description: "Report for orientation, receive college uniforms, and embark on holistic Christian-guided learning."
+        description: "Attend orientation, receive your college uniform, and begin a well-rounded education grounded in Christian values."
       }
     ],
     requirements: {
       seniorOne: [
-        "Primary Leaving Examination (PLE) Pass Slip / Result Printout (First or Second Grade).",
-        "Recommendation letter from previous primary school headteacher.",
-        "Certified copy of birth certificate / NIRA birth notification.",
-        "Four (4) recent passport-size colored photographs."
+        "Primary Leaving Examination (PLE) pass slip or result printout (First or Second Grade).",
+        "A recommendation letter from the previous primary school headteacher.",
+        "A certified copy of the birth certificate or NIRA birth notification.",
+        "Four recent passport-sized colour photographs."
       ],
       seniorFive: [
-        "Uganda Certificate of Education (UCE) Result Slip with relevant subject passes (UNEB Center U2779 standards).",
-        "School Leaving Certificate / Testimonial from previous secondary school.",
-        "Copy of National Identification Number (NIN) / Birth Certificate.",
-        "Four (4) recent passport-size colored photographs."
+        "Uganda Certificate of Education (UCE) result slip with the required subject passes (UNEB Center No. U2779).",
+        "A school-leaving certificate or testimonial from the previous secondary school.",
+        "A copy of the National Identification Number (NIN) or birth certificate.",
+        "Four recent passport-sized colour photographs."
       ],
       transfers: [
-        "Progressive academic report cards for the previous academic terms.",
-        "Official transfer recommendation letter from the former headteacher.",
-        "Disciplinary conduct certificate."
+        "Academic reports for the previous terms.",
+        "An official transfer recommendation letter from the previous headteacher.",
+        "A certificate of good conduct."
       ]
     },
     deadlines: {
@@ -344,13 +344,13 @@ window.siteContent = {
       termTwo: "Rolling transfer admissions",
       termThree: "Final intake and registration window"
     },
-    feesNotice: "Note: Official school fee structures are accessible directly from the School Campus Bursar's Office. For detailed fee enquiries, call 0392 946071 or +256 (0) 772 450 925.",
+    feesNotice: "Official fee details are available from the school bursar's office. For enquiries about fees, call 0392 946071 or +256 (0) 772 450 925.",
     documentsChecklist: [
-      "Certified academic result slip (PLE or UCE)",
-      "Official School Leaving Certificate / Testimonial",
-      "Copy of Birth Certificate / National ID",
-      "Four (4) colored passport-sized photos with student's name on reverse",
-      "Medical fitness examination report signed by a registered practitioner"
+      "A certified academic result slip (PLE or UCE)",
+      "An official school-leaving certificate or testimonial",
+      "A copy of the birth certificate or national ID",
+      "Four colour passport-sized photographs with the student's name written on the back",
+      "A medical examination report signed by a registered practitioner"
     ]
   },
 
@@ -369,8 +369,8 @@ window.siteContent = {
       title: "Music, Dance & Drama (MDD) Performances",
       icon: "sparkles",
       image: "assets/images/school actvities mdd.jpeg",
-      description: "Music, Dance and Drama gives students a platform to explore creative expression and celebrate Ugandan culture. Learners can contribute as performers or support the preparation and presentation of performances, developing confidence, collaboration, and appreciation of the arts.",
-      highlights: "The annual MDD festival brings Francisca, Anna Maria, and Tereza houses together."
+      description: "The Music, Dance and Drama programme gives students a platform to express their creativity and celebrate Ugandan culture. Learners can perform or help prepare and present performances, developing confidence, collaboration, and an appreciation of the arts.",
+      highlights: "The annual MDD festival brings the Francisca, Anna Maria, and Tereza houses together."
     }
   ],
 
@@ -380,32 +380,32 @@ window.siteContent = {
       id: "news-reg",
       category: "Admissions",
       date: "Active Intake",
-      title: "Registration in Progress at the School Campus — UNEB Center No. U2779",
-      summary: "Scholars arrive and move across campus as admissions and registration are underway for Senior One, Senior Five, and continuing transfer students.",
-      image: "assets/images/Maria Theresa College Group Photo.png",
+      title: "Registration is in progress at the school campus — UNEB Center No. U2779",
+      summary: "Admissions and registration are open for Senior One, Senior Five, and transfer students.",
+      image: "assets/images/chemistry prac.jpeg",
       author: "Office of the Admissions Registrar",
-      content: `Maria Theresa Ledochowska College – Lugazi announces that registration is currently in progress at the school campus for both O-Level (S.1 - S.4) and A-Level (S.5 - S.6).
+      content: `Maria Theresa Ledochowska College – Lugazi announces that registration is in progress at the school campus for O-Level (S.1–S.4) and A-Level (S.5–S.6).
 
-As an accredited UNEB Center (Center No. U2779), MTLC Lugazi is committed to providing quality and all-round education spiced by Christian values to produce responsible and God-fearing citizens.
+As an accredited UNEB examination centre (UNEB Center No. U2779), MTLC Lugazi is committed to providing a high-quality, all-round education grounded in Christian values and nurturing responsible, God-fearing citizens.
 
-Parents and guardians are cordially invited to visit the school campus in Lugazi (P. O. Box 258, Lugazi) to secure admission vacancies.
+Parents and guardians are welcome to visit the school campus in Lugazi to enquire about available places. The postal address is P. O. Box 258, Lugazi.
 
 For details, contact:
-• Office Landline: 0392 946071
-• Mobile / WhatsApp: +256 (0) 772 450 925
-• Official Email: mariatheresalego@gmail.com`
+• Office telephone: 0392 946071
+• Mobile or WhatsApp: +256 (0) 772 450 925
+• Email: mariatheresalego@gmail.com`
     },
     {
       id: "news-culture",
       category: "Events",
       date: "Cultural Week",
       title: "Music, Dance & Drama (MDD) Cultural Gala Celebrates Ugandan Heritage",
-      summary: "Students moving and dancing in vibrant traditional attire during the thrilling annual cultural gala and music festival.",
+      summary: "Students perform in vibrant traditional attire at the annual cultural gala and music festival.",
       image: "assets/images/music dance and drama.jpg",
       author: "Cultural & Arts Committee",
-      content: `The Maria Theresa Ledochowska College campus erupted in color and rhythm as students celebrated the annual Cultural Gala and MDD festival.
+      content: `The Maria Theresa Ledochowska College campus was filled with colour and rhythm as students celebrated the annual Cultural Gala and MDD festival.
 
-Scholars performed traditional folk dances from across Uganda, staging impressive choreography, theatrical skits, and choral music that highlighted cultural diversity and Christian unity.`
+Students performed traditional folk dances from across Uganda, alongside choreography, theatrical skits, and choral music celebrating cultural diversity and Christian unity.`
     },
     {
       id: "news-assembly",
@@ -417,18 +417,18 @@ Scholars performed traditional folk dances from across Uganda, staging impressiv
       author: "Dean of Students",
       content: `Maria Theresa Ledochowska College brings students together for assemblies and community activities on campus.
 
-These gatherings support fellowship, reflection, shared responsibility, and the college motto, 'Learning Today... Leading Tomorrow'.`
+These gatherings foster fellowship, reflection, and shared responsibility, and remind students of the college motto: “Learning Today... Leading Tomorrow.”`
     }
   ],
 
   // 10. PHOTO GALLERY (All Official Campus Photographs)
   gallery: [
     {
-      id: "gal-group",
-      title: "College Student Body & Uniform Assembly",
-      category: "Students",
-      description: "Scholars of Maria Theresa Ledochowska College in neat royal blue school uniforms on campus parade.",
-      image: "assets/images/Maria Theresa College Group Photo.png"
+      id: "gal-practical-chemistry",
+      title: "Practical Chemistry",
+      category: "Academics",
+      description: "Chemistry laboratory equipment prepared for practical learning.",
+      image: "assets/images/chemistry prac.jpeg"
     },
     {
       id: "gal-sci-dsc",
@@ -462,7 +462,7 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
       id: "gal-support-rooms",
       title: "School Environment",
       category: "Campus",
-      description: "Dedicated spaces supporting student wellbeing and practical skills development.",
+      description: "Dedicated spaces supporting student well-being and practical skills development.",
       image: "assets/images/sick-bay-and-skilling-room.jpeg"
     },
     {
@@ -474,10 +474,24 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
     },
     {
       id: "gal-college-grounds",
-      title: "Students in the College Compound",
-      category: "Campus",
-      description: "Students walking through the college compound with campus buildings in the background.",
-      image: "assets/images/school view upper.jpeg"
+      title: "Practical Chemistry",
+      category: "Academics",
+      description: "Chemistry laboratory equipment prepared for practical learning.",
+      image: "assets/images/chemistry prac.jpeg"
+    },
+    {
+      id: "gal-socialization",
+      title: "Student Socialisation",
+      category: "Students",
+      description: "Students socialising and building friendships as part of college life.",
+      image: "assets/images/socialization.jpeg"
+    },
+    {
+      id: "gal-a-level",
+      title: "A-Level Studies",
+      category: "Academics",
+      description: "Students participating in A-Level learning at the college.",
+      image: "assets/images/A level.jpeg"
     }
   ],
 
@@ -588,7 +602,7 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
       id: "christian-values",
       title: "Christian Values & Moral Foundation",
       icon: "heart",
-      description: "Molding responsible, disciplined, and God-fearing citizens with strong spiritual and ethical principles."
+      description: "Developing responsible, disciplined, and God-fearing citizens with strong spiritual and ethical values."
     },
     {
       id: "teachers",
@@ -600,13 +614,13 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
       id: "facilities",
       title: "Modern Computer Lab & Library",
       icon: "laptop",
-      description: "Equipped ICT laboratory suites, expansive college library, and vocational skilling workshop."
+      description: "Well-equipped ICT laboratories, a well-stocked college library, and a vocational-skills workshop."
     },
     {
       id: "leadership-dev",
       title: "Leadership & Character Formation",
       icon: "compass",
-      description: "Fostering servant leadership, public oratory, student guild participation, and personal integrity."
+      description: "Fostering servant leadership, public-speaking skills, student representation, and personal integrity."
     },
     {
       id: "environment",
@@ -618,7 +632,7 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
       id: "ict-skills",
       title: "Digital Literacy & Skilling",
       icon: "cpu",
-      description: "Equipping learners with digital competencies, computer practicals, tailoring, and practical life skills."
+      description: "Equipping learners with digital skills, practical computer experience, tailoring skills, and other useful life skills."
     },
     {
       id: "co-curricular",
@@ -672,23 +686,23 @@ These gatherings support fellowship, reflection, shared responsibility, and the 
   faq: [
     {
       question: "What is the official UNEB Center Number for the college?",
-      answer: "Maria Theresa Ledochowska College – Lugazi is an officially accredited examination center under UNEB CENTER NO. U2779 for both O-Level (UCE) and A-Level (UACE)."
+      answer: "Maria Theresa Ledochowska College – Lugazi is an accredited UNEB examination centre (UNEB Center No. U2779) for both O-Level (UCE) and A-Level (UACE)."
     },
     {
       question: "Is registration currently open for new students?",
-      answer: "Yes! Registration is currently in progress at the school campus in Lugazi for Senior One, Senior Five, and transfer vacancies. You can contact us via 0392 946071 or +256 (0) 772 450 925."
+      answer: "Yes. Registration is in progress at the school campus in Lugazi for Senior One, Senior Five, and transfer students. Call 0392 946071 or +256 (0) 772 450 925 for details."
     },
     {
       question: "Where is Maria Theresa Ledochowska College located?",
-      answer: "The college is located at Plot 140 Kampala-Jinja Road, Central Division, Lugazi Municipality, Nakazadde LCI. Our postal address is P. O. Box 258, Lugazi."
+      answer: "The college is located at Plot 140, Kampala–Jinja Road, Central Division, Lugazi Municipality, Nakazadde LCI. The postal address is P. O. Box 258, Lugazi."
     },
     {
       question: "What is the core mission and foundation of MTLC Lugazi?",
-      answer: "Our mission is: 'To provide quality all-round education, spiced by Christian values, to produce responsible and God-fearing citizens.'"
+      answer: "Our mission is to provide a high-quality, all-round education grounded in Christian values and nurture responsible, God-fearing citizens."
     },
     {
       question: "How can parents and guardians contact the school administration?",
-      answer: "You can reach the school office via 0392 946071, mobile/WhatsApp +256 (0) 772 450 925, or email mariatheresalego@gmail.com."
+      answer: "You can contact the school office by calling 0392 946071 or +256 (0) 772 450 925, or by emailing mariatheresalego@gmail.com."
     }
   ]
 };
