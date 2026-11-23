@@ -497,42 +497,42 @@ These gatherings foster fellowship, reflection, and shared responsibility, and r
 
   spiritualGrowthPhotos: [
     {
-      title: "School Dedication Day",
+      title: "",
       description: "The school community gathers in faith for a special dedication celebration.",
       image: "assets/images/dedication day.jpeg"
     },
     {
-      title: "School Community at General Mass",
+      title: "",
       description: "Students and staff gather for the school community's general Mass.",
       image: "assets/images/general mass.jpeg"
     },
     {
-      title: "Student Prayer and Reflection",
+      title: "",
       description: "A student leads the school community in prayer and reflection.",
       image: "assets/images/prayer.jpeg"
     },
     {
-      title: "Religious Education and Service",
+      title: "",
       description: "Students take part in religious education and service as part of their faith formation.",
       image: "assets/images/religion.jpeg"
     },
     {
-      title: "Student Faith Community",
+      title: "",
       description: "Students participate in the school's faith community and religious life.",
       image: "assets/images/religion 2.jpeg"
     },
     {
-      title: "Students at the School Dedication",
+      title: "",
       description: "Students gather for a school dedication celebration.",
       image: "assets/images/religion 3.jpeg"
     },
     {
-      title: "Students in Worship and Song",
+      title: "",
       description: "Students join together in song during a faith gathering.",
       image: "assets/images/religion 4.jpeg"
     },
     {
-      title: "School Community at Mass",
+      title: "",
       description: "Students and clergy gather for a school Mass.",
       image: "assets/images/religion 5.jpeg"
     }

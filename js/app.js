@@ -655,9 +655,8 @@ function renderSpiritualGrowth() {
   const siteRoot = new URL(window.location.pathname.includes('/campus/') ? '../' : './', window.location.href);
   container.innerHTML = (siteContent.spiritualGrowthPhotos || []).map((photo, index) => `
     <article class="spiritual-photo-card reveal delay-${(index % 3) + 1}">
-      <img src="${escapeHtml(new URL(photo.image, siteRoot).href)}" alt="${escapeHtml(photo.title)}" loading="lazy">
+      <img src="${escapeHtml(new URL(photo.image, siteRoot).href)}" alt="${escapeHtml(photo.description)}" loading="lazy">
       <div class="spiritual-photo-copy">
-        <h3>${escapeHtml(photo.title)}</h3>
         <p>${escapeHtml(photo.description)}</p>
       </div>
     </article>
@@ -679,8 +678,8 @@ function renderHomeFaithPhotos() {
     <div class="home-faith-photo-group"${isDuplicate ? ' aria-hidden="true"' : ''}>
       ${photos.map((photo) => `
         <figure class="home-faith-photo">
-          <img src="${escapeHtml(new URL(photo.image, siteRoot).href)}" alt="${isDuplicate ? '' : escapeHtml(photo.title)}" loading="lazy">
-          ${isDuplicate ? '' : `<figcaption>${escapeHtml(photo.title)}</figcaption>`}
+          <img src="${escapeHtml(new URL(photo.image, siteRoot).href)}" alt="${isDuplicate ? '' : escapeHtml(photo.description)}" loading="lazy">
+          ${isDuplicate ? '' : ''}
         </figure>
       `).join('')}
     </div>
