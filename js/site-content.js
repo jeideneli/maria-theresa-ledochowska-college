@@ -209,7 +209,7 @@ window.siteContent = {
         { name: "Entrepreneurship", description: "Build enterprise awareness and problem-solving skills." },
         { name: "Information & Communication Technology (ICT)", description: "Develop digital literacy and computer skills." }
       ],
-      description: "The department groups applied, creative, enterprise, and information technology subjects.",
+      description: "The department groups applied, creative, enterprise and information technology subjects.",
       labCount: "Learning through practical, creative, and digital subjects"
     },
     {
